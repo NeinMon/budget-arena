@@ -366,19 +366,20 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 
 .choice-btn:hover:not(:disabled) {
   border-color: var(--primary);
-  background: white;
+  background: rgba(34, 184, 215, 0.12);
 }
 
-.choice-btn.correct { border-color: var(--green); background: #dcfce7; }
-.choice-btn.incorrect { border-color: var(--red); background: #fee2e2; }
+.choice-btn.correct { border-color: var(--green); background: rgba(52, 211, 153, 0.16); }
+.choice-btn.incorrect { border-color: var(--red); background: rgba(251, 113, 133, 0.16); }
 .choice-btn:disabled { cursor: default; }
 
 .feedback {
   margin-top: 16px;
   padding: 15px;
   border-radius: 8px;
-  background: #ecfeff;
-  color: #164e63;
+  border: 1px solid rgba(34, 184, 215, 0.24);
+  background: rgba(34, 184, 215, 0.1);
+  color: #c7f4ff;
   line-height: 1.7;
   font-weight: 700;
 }
@@ -480,8 +481,8 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 .result-code {
   display: inline-flex;
   width: fit-content;
-  color: white;
-  background: var(--ink);
+  color: #67e8f9;
+  background: rgba(2, 8, 23, 0.72);
   font-weight: 900;
   letter-spacing: 0.04em;
 }
@@ -528,7 +529,7 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: white;
+  background: rgba(16, 29, 49, 0.92);
 }
 
 .check-grid .done {
@@ -610,7 +611,7 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 
 .policy-card:hover:not(:disabled) {
   border-color: var(--primary);
-  background: white;
+  background: rgba(34, 184, 215, 0.12);
 }
 
 .policy-card:disabled {
@@ -668,7 +669,7 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 .drag-bank.over,
 .drop-zone.over {
   border-color: var(--primary);
-  background: #ecfeff;
+  background: rgba(34, 184, 215, 0.12);
 }
 
 .drag-card {
@@ -678,7 +679,7 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
   border: 1px solid var(--line);
   border-radius: 8px;
   color: var(--ink);
-  background: white;
+  background: rgba(16, 29, 49, 0.96);
   text-align: left;
   font-weight: 800;
   cursor: grab;
@@ -705,14 +706,14 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 
 .round-feedback article {
   padding: 12px;
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(125, 166, 205, 0.2);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(16, 29, 49, 0.9);
 }
 
 .round-feedback article.news {
-  border-color: rgba(180, 83, 9, 0.32);
-  background: #fff7ed;
+  border-color: rgba(245, 158, 11, 0.34);
+  background: rgba(120, 53, 15, 0.34);
 }
 
 .round-feedback strong,
@@ -722,13 +723,13 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 
 .round-feedback strong {
   margin-bottom: 5px;
-  color: #0f172a;
+  color: #eaf9ff;
   font-size: 0.78rem;
   text-transform: uppercase;
 }
 
 .round-feedback span {
-  color: #475569;
+  color: #a7b8ca;
   font-size: 0.88rem;
   line-height: 1.55;
 }
@@ -827,8 +828,8 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
   border: 0;
   border-radius: 12px;
   padding: 0;
-  color: #0f172a;
-  background: white;
+  color: var(--ink);
+  background: #0b1626;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
 }
 
@@ -853,8 +854,8 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
   width: 44px;
   border: 0;
   border-radius: 999px;
-  color: #0f172a;
-  background: #e2e8f0;
+  color: #eaf9ff;
+  background: rgba(148, 163, 184, 0.18);
   font-size: 1.35rem;
   cursor: pointer;
 }
@@ -865,7 +866,7 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 
 .theory-dialog p,
 .theory-dialog span {
-  color: #475569;
+  color: var(--muted);
   line-height: 1.65;
 }
 
@@ -876,9 +877,9 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 
 .dialog-grid article {
   padding: 12px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--line);
   border-radius: 8px;
-  background: #f8fafc;
+  background: var(--surface-2);
 }
 
 .dialog-grid strong,
@@ -942,12 +943,12 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 
 .drag-card.correct {
   border-color: var(--green);
-  background: #dcfce7;
+  background: rgba(52, 211, 153, 0.16);
 }
 
 .drag-card.incorrect {
   border-color: var(--red);
-  background: #fee2e2;
+  background: rgba(251, 113, 133, 0.16);
 }
 
 .drop-grid {
@@ -998,8 +999,8 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 }
 
 .warning-card {
-  border-color: #fed7aa;
-  background: #fff7ed;
+  border-color: rgba(245, 158, 11, 0.46);
+  background: rgba(120, 53, 15, 0.34);
 }
 
 .game-page {
@@ -1162,7 +1163,7 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
 
 .allocation-zone.over {
   border-color: var(--primary);
-  background: #ecfeff;
+  background: rgba(34, 184, 215, 0.12);
 }
 
 .allocation-zone h2 {
