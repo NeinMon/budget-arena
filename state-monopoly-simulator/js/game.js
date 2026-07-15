@@ -1,5 +1,5 @@
 const CITY_KEY = "stateMonopolySimulation";
-const COINS_PER_ROUND = 6;
+const BASE_COINS_PER_ROUND = 6;
 
 const cityZones = {
   bigCorp: {
@@ -69,6 +69,14 @@ function score(stats) {
 
 function currentScenario(state) {
   return scenarios[Math.min(state.index, scenarios.length - 1)];
+}
+
+function budgetForRound(stats) {
+  const budget = stats.stateBudget ?? 100;
+  if (budget >= 108) return BASE_COINS_PER_ROUND + 1;
+  if (budget >= 75) return BASE_COINS_PER_ROUND;
+  if (budget >= 45) return BASE_COINS_PER_ROUND - 1;
+  return BASE_COINS_PER_ROUND - 2;
 }
 
 function counts() {
@@ -221,10 +229,10 @@ function renderMetrics(baseStats, allocation = counts()) {
   if (cityScore) cityScore.textContent = score(next);
 }
 
-function renderCoins() {
+function renderCoins(amount = BASE_COINS_PER_ROUND) {
   const bank = document.querySelector("#coinBank");
   if (!bank) return;
-  bank.innerHTML = Array.from({ length: COINS_PER_ROUND }, (_, index) => (
+  bank.innerHTML = Array.from({ length: amount }, (_, index) => (
     `<button class="coin" draggable="true" data-coin="${index}" title="Ngân sách">$</button>`
   )).join("");
   bindCoins();
@@ -288,7 +296,7 @@ function pulse(target) {
 
 function resetRoundCoins() {
   document.querySelectorAll(".district-coins").forEach((zone) => zone.innerHTML = "");
-  renderCoins();
+  renderCoins(budgetForRound(loadCity().stats));
 }
 
 function renderRound() {
@@ -299,13 +307,16 @@ function renderRound() {
   const brief = document.querySelector("#cityBrief");
   const message = document.querySelector("#cityMessage");
   const run = document.querySelector("#runPolicy");
+  const recall = document.querySelector("#recallBudget");
   const feedback = document.querySelector("#roundFeedback");
 
   renderMetrics(state.stats, {});
   if (run) {
     run.textContent = "Xác nhận chính sách";
     run.disabled = false;
+    run.dataset.mode = "run";
   }
+  if (recall) recall.disabled = false;
   if (feedback) {
     feedback.hidden = true;
     feedback.innerHTML = "";
@@ -339,9 +350,18 @@ function dominantZone(allocation) {
 }
 
 function runPolicy() {
+  const run = document.querySelector("#runPolicy");
+  if (run?.dataset.mode === "next") {
+    if (loadCity().index >= scenarios.length) {
+      location.href = "result.html";
+      return;
+    }
+    renderRound();
+    return;
+  }
+
   const state = loadCity();
   if (state.index >= scenarios.length) return;
-  const run = document.querySelector("#runPolicy");
   const allocation = counts();
   const spent = Object.values(allocation).reduce((sum, value) => sum + value, 0);
   const message = document.querySelector("#cityMessage");
@@ -376,23 +396,23 @@ function runPolicy() {
 
   saveCity(nextState);
   message.textContent = nextState.index >= scenarios.length
-    ? "Đã hoàn thành 5 vòng. Đang mở báo cáo kết quả..."
-    : "Đã xác nhận chính sách. Hệ thống sẽ tự chuyển sang vòng tiếp theo.";
+    ? "Đã hoàn thành 5 vòng. Hãy xem tác động, sau đó bấm Mở báo cáo."
+    : "Đã xác nhận chính sách. Hãy xem tác động, sau đó bấm Vòng tiếp theo.";
   renderRoundFeedback(feedback);
   renderMetrics(nextState.stats, {});
   updateScenarioMood(nextState.stats);
   flashMap(effects);
+  document.querySelectorAll(".coin").forEach((coin) => {
+    coin.disabled = true;
+    coin.draggable = false;
+    coin.classList.remove("selected");
+  });
+  document.querySelector("#recallBudget").disabled = true;
   if (run) {
-    run.disabled = true;
-    run.textContent = nextState.index >= scenarios.length ? "Đang mở kết quả..." : "Đang chuyển vòng...";
+    run.disabled = false;
+    run.dataset.mode = "next";
+    run.textContent = nextState.index >= scenarios.length ? "Mở báo cáo kết quả" : "Vòng tiếp theo";
   }
-  setTimeout(() => {
-    if (nextState.index >= scenarios.length) {
-      location.href = "result.html";
-      return;
-    }
-    renderRound();
-  }, 2200);
 }
 
 function flashMap(effects) {

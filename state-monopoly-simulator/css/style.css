@@ -1404,6 +1404,11 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
   cursor: pointer;
 }
 
+.ghost-btn:disabled {
+  cursor: default;
+  opacity: 0.52;
+}
+
 .crisis-console h2,
 .metrics-console h2 {
   color: #f8fbff;
