@@ -1,17 +1,17 @@
 :root {
-  color-scheme: light;
-  --bg: #eef3f7;
-  --surface: #ffffff;
-  --surface-2: #f6f8fb;
-  --ink: #142033;
-  --muted: #64748b;
-  --line: #d7e0ea;
-  --primary: #155e75;
-  --primary-2: #0f766e;
-  --accent: #b45309;
-  --green: #15803d;
-  --red: #b91c1c;
-  --shadow: 0 18px 45px rgba(15, 23, 42, 0.13);
+  color-scheme: dark;
+  --bg: #050b14;
+  --surface: #0b1626;
+  --surface-2: #101d31;
+  --ink: #eef7ff;
+  --muted: #a7b8ca;
+  --line: rgba(125, 166, 205, 0.22);
+  --primary: #22b8d7;
+  --primary-2: #14b8a6;
+  --accent: #f59e0b;
+  --green: #34d399;
+  --red: #fb7185;
+  --shadow: 0 22px 55px rgba(0, 0, 0, 0.34);
 }
 
 * { box-sizing: border-box; }
@@ -22,8 +22,9 @@ body {
   font-family: "Be Vietnam Pro", Arial, sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 14% 10%, rgba(21, 94, 117, 0.18), transparent 26rem),
-    radial-gradient(circle at 88% 4%, rgba(180, 83, 9, 0.16), transparent 24rem),
+    radial-gradient(circle at 14% 10%, rgba(34, 184, 215, 0.17), transparent 26rem),
+    radial-gradient(circle at 88% 4%, rgba(245, 158, 11, 0.12), transparent 24rem),
+    linear-gradient(180deg, #07111f 0%, #050b14 45%, #030712 100%),
     var(--bg);
 }
 
@@ -44,7 +45,7 @@ button { min-height: 44px; }
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  background: rgba(10, 22, 38, 0.9);
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
 }
@@ -85,12 +86,14 @@ button { min-height: 44px; }
   padding: 0 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--surface);
+  color: var(--ink);
+  background: rgba(12, 27, 46, 0.92);
   font-weight: 800;
 }
 
 .nav a.active, .nav a:hover, .btn:hover {
   border-color: var(--primary);
+  background: rgba(34, 184, 215, 0.12);
 }
 
 .btn {
@@ -99,8 +102,8 @@ button { min-height: 44px; }
 
 .btn.primary {
   border-color: var(--primary);
-  color: white;
-  background: var(--primary);
+  color: #04111d;
+  background: linear-gradient(135deg, #67e8f9, #fbbf24);
 }
 
 main {
@@ -118,7 +121,7 @@ main {
 .hero-copy, .panel, .feature-card, .prompt-card, .explore-card, .reference-card, .drop-zone {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--surface);
+  background: rgba(10, 22, 38, 0.86);
   box-shadow: var(--shadow);
 }
 
@@ -137,16 +140,7 @@ main {
 }
 
 .hero-copy::after {
-  content: "";
-  position: absolute;
-  inset: auto clamp(24px, 6vw, 76px) clamp(18px, 4vw, 44px) auto;
-  width: min(320px, 34vw);
-  aspect-ratio: 16 / 9;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  background: url("../assets/images/hero-budget-arena.webp") center / cover no-repeat;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.38);
-  pointer-events: none;
+  content: none;
 }
 
 .hero-copy h1 {
@@ -207,8 +201,8 @@ h2 { font-size: clamp(1.45rem, 3vw, 2.2rem); }
   padding: 14px;
   border-left: 4px solid var(--accent);
   border-radius: 8px;
-  background: #fff7ed;
-  color: #7c2d12;
+  background: rgba(120, 53, 15, 0.52);
+  color: #fed7aa;
   font-weight: 700;
 }
 
