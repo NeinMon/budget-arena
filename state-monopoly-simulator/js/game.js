@@ -38,6 +38,14 @@ const metricOrder = [
   "employment"
 ];
 
+const scenarioPressures = [
+  { bigCorp: 1.18, reserve: 1.12, consumers: 0.9 },
+  { smallBiz: 1.2, reserve: 1.15, bigCorp: 0.88 },
+  { consumers: 1.2, smallBiz: 1.08, reserve: 1.08 },
+  { publicInvest: 1.22, smallBiz: 1.12, bigCorp: 0.92 },
+  { bigCorp: 1.12, smallBiz: 1.12, reserve: 1.08 }
+];
+
 let selectedCoin = null;
 
 function clamp(value) {
@@ -71,12 +79,15 @@ function currentScenario(state) {
   return scenarios[Math.min(state.index, scenarios.length - 1)];
 }
 
-function budgetForRound(stats) {
+function budgetForRound(stats, roundIndex = loadCity().index) {
   const budget = stats.stateBudget ?? 100;
-  if (budget >= 108) return BASE_COINS_PER_ROUND + 1;
-  if (budget >= 75) return BASE_COINS_PER_ROUND;
-  if (budget >= 45) return BASE_COINS_PER_ROUND - 1;
-  return BASE_COINS_PER_ROUND - 2;
+  if (roundIndex === 0) return BASE_COINS_PER_ROUND;
+  if (budget >= 96) return BASE_COINS_PER_ROUND + 2;
+  if (budget >= 86) return BASE_COINS_PER_ROUND + 1;
+  if (budget >= 66) return BASE_COINS_PER_ROUND;
+  if (budget >= 46) return BASE_COINS_PER_ROUND - 1;
+  if (budget >= 26) return BASE_COINS_PER_ROUND - 2;
+  return BASE_COINS_PER_ROUND - 3;
 }
 
 function counts() {
@@ -87,17 +98,30 @@ function counts() {
   return result;
 }
 
-function combinedEffects(allocation) {
+function combinedEffects(allocation, scenarioIndex = loadCity().index) {
   const effects = {};
+  const pressure = scenarioPressures[scenarioIndex] || {};
   Object.entries(allocation).forEach(([zone, count]) => {
+    const multiplier = pressure[zone] || 1;
     Object.entries(cityZones[zone].effects).forEach(([key, value]) => {
       for (let index = 0; index < count; index += 1) {
         const diminishing = [1, 0.75, 0.5, 0.3, 0.15, 0.05][index] ?? 0.05;
-        effects[key] = (effects[key] ?? 0) + Math.round(value * diminishing);
+        effects[key] = (effects[key] ?? 0) + Math.round(value * diminishing * multiplier);
       }
     });
   });
   return effects;
+}
+
+function scenarioPressureNote(scenarioIndex, zone) {
+  const multiplier = (scenarioPressures[scenarioIndex] || {})[zone] || 1;
+  if (multiplier >= 1.15) {
+    return `Bối cảnh vòng này làm lựa chọn "${cityZones[zone].label}" có tác động mạnh hơn bình thường.`;
+  }
+  if (multiplier <= 0.92) {
+    return `Bối cảnh vòng này làm lựa chọn "${cityZones[zone].label}" kém hiệu quả hơn bình thường.`;
+  }
+  return "";
 }
 
 function topEffects(effects, limit = 3) {
@@ -133,9 +157,10 @@ function buildPolicyEvent(allocation, effects) {
 
 function buildRoundFeedback(state, allocation, effects, zone) {
   const scenario = currentScenario(state);
+  const pressureNote = scenarioPressureNote(state.index, zone);
   return {
     immediate: topEffects(effects) || "Các chỉ số thay đổi nhẹ, chưa xuất hiện tác động nổi bật.",
-    longTerm: cityZones[zone].note,
+    longTerm: pressureNote ? `${pressureNote} ${cityZones[zone].note}` : cityZones[zone].note,
     theory: scenario.theory || "Tình huống minh họa cách nguồn lực nhà nước, lợi ích xã hội và ảnh hưởng của các tổ chức kinh tế lớn có thể đan xen trong điều tiết kinh tế.",
     event: buildPolicyEvent(allocation, effects)
   };
@@ -196,8 +221,8 @@ function updateScenarioMood(stats) {
   }
 }
 
-function previewStats(baseStats, allocation = counts()) {
-  const effects = combinedEffects(allocation);
+function previewStats(baseStats, allocation = counts(), scenarioIndex = loadCity().index) {
+  const effects = combinedEffects(allocation, scenarioIndex);
   const next = { ...baseStats };
   Object.entries(effects).forEach(([key, value]) => {
     next[key] = clamp((next[key] ?? 50) + value);
@@ -335,11 +360,12 @@ function renderRound() {
   }
 
   const scenario = currentScenario(state);
+  const roundBudget = budgetForRound(state.stats, state.index);
   updateScenarioVisual(scenario, state.index);
   round.textContent = `Vòng ${state.index + 1}/${scenarios.length}`;
   title.textContent = scenario.title;
   brief.textContent = scenario.description;
-  message.textContent = "Phân bổ ngân sách vào các khu vực, sau đó bấm Xác nhận chính sách.";
+  message.textContent = `Vòng này bạn có ${roundBudget} đồng ngân sách. Phân bổ vào các khu vực, sau đó bấm Xác nhận chính sách.`;
   run.disabled = false;
   resetRoundCoins();
 }
@@ -371,7 +397,7 @@ function runPolicy() {
   }
   if (run) run.disabled = true;
 
-  const { next, effects } = previewStats(state.stats, allocation);
+  const { next, effects } = previewStats(state.stats, allocation, state.index);
   const zone = dominantZone(allocation);
   const feedback = buildRoundFeedback(state, allocation, effects, zone);
   const allocationText = Object.entries(allocation)
