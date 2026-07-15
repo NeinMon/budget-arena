@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | Budget Arena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">BA</span><span><strong>Budget Arena</strong><small>Quyền lực phía sau thị trường</small></span></a>
+    <nav class="nav">
+      <a href="index.html">Giới thiệu</a>
+      <a href="game.html">Game</a>
+      <a href="result.html">Kết quả</a>
+      <a class="active" href="quiz.html">Quiz</a>
+      <a href="references.html">Nguồn</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="quiz-shell panel">
+      <p class="eyebrow" id="quizProgress">Câu 1/8</p>
+      <h1 id="quizQuestion"></h1>
+      <div class="choice-list" id="quizOptions"></div>
+      <div class="feedback" id="quizFeedback" hidden></div>
+      <div class="actions">
+        <button class="btn primary" id="nextQuestion">Câu tiếp theo</button>
+        <button class="btn" id="restartQuiz">Làm lại quiz</button>
+        <a class="btn" href="../on-tap-chuong-4/index.html" target="_blank" rel="noopener noreferrer">Kho câu hỏi ôn tập Chương 4</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/scenarios.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Độc Quyền & Tư Bản | Chapter 4 Quiz Platform</title>
+  <meta name="description" content="Nền tảng câu hỏi tương tác về Chương 4: cạnh tranh, độc quyền, độc quyền nhà nước và vai trò lịch sử của chủ nghĩa tư bản.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260715-nav">
+</head>
+<body>
+  <main class="app-shell">
+    <nav class="topbar" aria-label="Điều hướng chính">
+      <button class="brand-btn" data-view="home" aria-label="Về trang chủ">
+        <span class="brand-mark">§</span>
+        <span>
+          <strong>ĐỘC QUYỀN & TƯ BẢN</strong>
+          <small>Chapter 4 Quiz Platform</small>
+        </span>
+      </button>
+
+      <div class="nav-actions">
+        <a class="nav-btn" href="../state-monopoly-simulator/game.html">Về Budget Arena</a>
+        <button class="icon-btn" id="themeToggle" title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện sáng/tối">☾</button>
+        <button class="nav-btn" data-view="profile">Hồ sơ</button>
+        <button class="nav-btn" data-view="leaderboard">Bảng kết quả</button>
+        <button class="nav-btn admin-only" id="adminNav" data-view="admin" hidden>Quản lý</button>
+      </div>
+    </nav>
+
+    <section class="status-strip" aria-label="Trạng thái người học">
+      <div>
+        <span>Người học</span>
+        <strong id="playerNameView">Khách</strong>
+      </div>
+      <div>
+        <span>Vai trò</span>
+        <strong id="roleView">Người học</strong>
+      </div>
+      <div>
+        <span>Lượt luyện</span>
+        <strong id="playsView">0</strong>
+      </div>
+      <div>
+        <span>Điểm gần nhất</span>
+        <strong id="lastScoreView">0%</strong>
+      </div>
+    </section>
+
+    <section id="app" class="view-panel" aria-live="polite"></section>
+  </main>
+
+  <script src="firebase-config.js"></script>
+  <script src="script.js?v=20260715-60m"></script>
+</body>
+</html>

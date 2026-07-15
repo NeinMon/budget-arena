@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Arena: Quyền lực phía sau thị trường</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="game-body">
+  <header class="game-nav">
+    <a class="game-brand" href="index.html">
+      <span>BA</span>
+      <strong>Budget Arena</strong>
+    </a>
+    <nav>
+      <a href="index.html">Giới thiệu</a>
+      <a class="active" href="game.html">Game</a>
+      <a href="result.html">Kết quả</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="references.html">Nguồn</a>
+    </nav>
+  </header>
+
+  <main class="city-game">
+    <section class="city-hero">
+      <div>
+        <p class="eyebrow">Quyền lực phía sau thị trường</p>
+        <h1>Điều phối ngân sách trong 5 vòng chính sách</h1>
+        <p>Phân bổ ngân sách vào các khu vực, quan sát ngân sách còn lại, phúc lợi xã hội, cạnh tranh thị trường, việc làm và ảnh hưởng của tập đoàn lớn thay đổi theo thời gian.</p>
+      </div>
+      <div class="city-score">
+        <span>Điểm cân bằng</span>
+        <strong id="cityScore">50</strong>
+      </div>
+    </section>
+
+    <section class="city-layout">
+      <aside class="city-panel crisis-console">
+        <div class="round-line">
+          <span id="cityRound">Vòng 1/5</span>
+          <button id="resetCity">Chơi lại</button>
+        </div>
+        <h2 id="cityTitle"></h2>
+        <p id="cityBrief"></p>
+
+        <div class="budget-console">
+          <div>
+            <span>Đồng ngân sách vòng này</span>
+            <strong id="budgetLeft">6</strong>
+          </div>
+          <div class="coin-bank" id="coinBank"></div>
+        </div>
+
+        <div class="city-actions">
+          <button class="run-btn" id="runPolicy">Xác nhận chính sách</button>
+          <button class="ghost-btn" id="recallBudget">Thu hồi</button>
+          <a class="ghost-btn" href="result.html">Báo cáo</a>
+        </div>
+
+        <div class="city-message" id="cityMessage">Kéo đồng ngân sách vào một khu vực, hoặc bấm đồng ngân sách rồi bấm khu vực.</div>
+        <div class="round-feedback" id="roundFeedback" hidden></div>
+      </aside>
+
+      <section class="city-map-wrap">
+        <section class="scenario-visual">
+          <img id="scenarioImage" src="assets/images/round-1-bank.webp" alt="Khủng hoảng ngân hàng trong khu tài chính thành phố" loading="eager" onerror="this.src='assets/images/fallback.webp'">
+          <div class="scenario-status" id="scenarioStatus"></div>
+          <div class="scenario-overlay">
+            <span id="scenarioRound">Vòng 1/5</span>
+            <h2 id="scenarioTitle">Ngân hàng lớn có nguy cơ phá sản</h2>
+          </div>
+        </section>
+
+        <div class="city-map" id="cityMap">
+          <div class="city-core">
+            <span>STATE</span>
+            <strong>Policy Core</strong>
+          </div>
+
+          <section class="district district-corp" data-zone="bigCorp">
+            <span class="district-icon">01</span>
+            <h3>Tập đoàn lớn</h3>
+            <p>Cứu trợ, hợp đồng công, tín dụng ưu đãi có điều kiện.</p>
+            <div class="district-coins"></div>
+          </section>
+
+          <section class="district district-small" data-zone="smallBiz">
+            <span class="district-icon">02</span>
+            <h3>DN nhỏ</h3>
+            <p>Chia gói thầu, hỗ trợ cạnh tranh.</p>
+            <div class="district-coins"></div>
+          </section>
+
+          <section class="district district-public" data-zone="consumers">
+            <span class="district-icon">03</span>
+            <h3>Người tiêu dùng</h3>
+            <p>Trợ giá, kiểm soát giá, phúc lợi xã hội.</p>
+            <div class="district-coins"></div>
+          </section>
+
+          <section class="district district-infra" data-zone="publicInvest">
+            <span class="district-icon">04</span>
+            <h3>R&D / Hạ tầng</h3>
+            <p>Đầu tư công, nghiên cứu, nền tảng xã hội.</p>
+            <div class="district-coins"></div>
+          </section>
+
+          <section class="district district-watch" data-zone="reserve">
+            <span class="district-icon">05</span>
+            <h3>Điều tiết & dự phòng</h3>
+            <p>Chống độc quyền, minh bạch, giữ nguồn lực cho khủng hoảng.</p>
+            <div class="district-coins"></div>
+          </section>
+        </div>
+      </section>
+
+      <aside class="city-panel metrics-console">
+        <h2>Chỉ số trực tiếp</h2>
+        <p>Chỉ số đổi sau mỗi lần xác nhận chính sách. Các vùng đỏ là áp lực cần chú ý khi thuyết trình.</p>
+        <div class="metric-list" id="cityMetrics"></div>
+        <div class="theory-note">
+          <strong>Ý nghĩa lý luận</strong>
+          <span id="theoryNote">Hỗ trợ doanh nghiệp lớn chỉ trở thành biểu hiện đáng chú ý khi nguồn lực công làm tăng vị thế chi phối và quan hệ phụ thuộc giữa nhà nước với tổ chức độc quyền.</span>
+        </div>
+        <button class="class-mode" id="openTheory" type="button">ⓘ Cơ sở lý luận</button>
+      </aside>
+    </section>
+  </main>
+
+  <dialog class="theory-dialog" id="theoryDialog">
+    <form method="dialog">
+      <div class="dialog-head">
+        <p class="eyebrow">Cơ sở lý luận</p>
+        <button aria-label="Đóng">×</button>
+      </div>
+      <h2>Độc quyền nhà nước dưới chủ nghĩa tư bản</h2>
+      <p>Game minh họa sự kết hợp giữa quyền lực nhà nước và các tổ chức kinh tế lớn thông qua ngân sách, điều tiết, hợp đồng công, hỗ trợ có điều kiện và cơ chế giám sát.</p>
+      <div class="dialog-grid">
+        <article>
+          <strong>Biểu hiện mô phỏng</strong>
+          <span>Cứu trợ tài chính, hợp đồng hạ tầng, điều tiết dữ liệu, trợ giá, bảo vệ cạnh tranh và điều kiện minh bạch.</span>
+        </article>
+        <article>
+          <strong>Cách đọc chỉ số</strong>
+          <span>Chỉ số không phải dự báo thực tế, mà giúp so sánh đánh đổi giữa ngân sách, việc làm, phúc lợi, cạnh tranh và ảnh hưởng tập đoàn.</span>
+        </article>
+        <article>
+          <strong>Lưu ý học thuật</strong>
+          <span>Hỗ trợ doanh nghiệp lớn chưa tự động là độc quyền nhà nước; cần xét vị thế chi phối, điều kiện kiểm soát và lợi ích xã hội.</span>
+        </article>
+      </div>
+      <a class="btn" href="references.html">Xem nguồn tham khảo</a>
+    </form>
+  </dialog>
+
+  <script src="js/scenarios.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

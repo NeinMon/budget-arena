@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Trong game, cứu trợ trực tiếp cho tập đoàn lớn không kèm điều kiện thường làm tăng chỉ số nào?",
+    "options": [
+      "Ảnh hưởng tập đoàn",
+      "Ngân sách còn lại",
+      "Sức sống DN nhỏ",
+      "Cạnh tranh thị trường"
+    ],
+    "answer": 0,
+    "explanation": "Cứu trợ trực tiếp có thể làm tăng ảnh hưởng và vị thế thương lượng của tập đoàn lớn nếu thiếu điều kiện kiểm soát."
+  },
+  {
+    "question": "Nhà nước mua cổ phần trong doanh nghiệp tư nhân minh họa rõ nhất biểu hiện nào?",
+    "options": [
+      "Sở hữu nhà nước và sở hữu tư nhân đan xen",
+      "Không can thiệp kinh tế",
+      "Xóa bỏ độc quyền",
+      "Cạnh tranh hoàn hảo"
+    ],
+    "answer": 0,
+    "explanation": "Đây là dạng sở hữu hỗn hợp, thể hiện sự đan xen giữa khu vực nhà nước và tư nhân."
+  },
+  {
+    "question": "Chia gói thầu công cho nhiều doanh nghiệp có xu hướng hỗ trợ chỉ số nào?",
+    "options": [
+      "Sức sống DN nhỏ",
+      "Tập trung thị trường",
+      "Ảnh hưởng tập đoàn",
+      "Độc quyền tuyệt đối"
+    ],
+    "answer": 0,
+    "explanation": "Chia gói thầu giúp doanh nghiệp nhỏ có cơ hội tham gia và giảm phụ thuộc vào tập đoàn lớn."
+  },
+  {
+    "question": "Câu cảnh báo nào cần có trong website mô phỏng?",
+    "options": [
+      "Đây là mô phỏng minh họa lý luận, không phải dự báo kinh tế thực tế",
+      "Mô phỏng luôn đúng với mọi quốc gia",
+      "Không cần nguồn tham khảo",
+      "Mọi can thiệp đều xấu"
+    ],
+    "answer": 0,
+    "explanation": "Cảnh báo này giúp sản phẩm nghiêm túc và tránh hiểu nhầm mô phỏng là mô hình dự báo."
+  },
+  {
+    "question": "Công cụ nào thuộc nhóm điều tiết có lợi cho tổ chức độc quyền?",
+    "options": [
+      "Trợ cấp, ưu đãi thuế, bảo hộ, cứu trợ",
+      "Tự cấp tự túc",
+      "Xóa bỏ ngân sách",
+      "Không có luật pháp"
+    ],
+    "answer": 0,
+    "explanation": "Đây là các công cụ nhà nước có thể sử dụng để hỗ trợ hoặc điều tiết hoạt động của doanh nghiệp lớn."
+  },
+  {
+    "question": "Khi nhà nước dùng ngân sách ký hợp đồng công quy mô lớn với tập đoàn, điểm cần phân tích là gì?",
+    "options": [
+      "Sự chuyển hóa nguồn lực công thành lợi thế cho doanh nghiệp lớn",
+      "Ngân sách không liên quan kinh tế",
+      "Doanh nghiệp nhỏ chắc chắn hưởng lợi",
+      "Không có tác động thị trường"
+    ],
+    "answer": 0,
+    "explanation": "Hợp đồng công có thể tạo lợi thế lớn cho doanh nghiệp nhận thầu."
+  },
+  {
+    "question": "Tập đoàn xuyên quốc gia và đầu tư ra nước ngoài gắn với biểu hiện nào?",
+    "options": [
+      "Mở rộng hoạt động ra phạm vi quốc tế",
+      "Chỉ là tiêu dùng cá nhân",
+      "Không liên quan chính sách nhà nước",
+      "Sản xuất tự nhiên"
+    ],
+    "answer": 0,
+    "explanation": "Đây là biểu hiện về phạm vi hoạt động và phối hợp giữa quyền lực kinh tế với chính sách nhà nước."
+  },
+  {
+    "question": "Kết luận phù hợp nhất sau mô phỏng là gì?",
+    "options": [
+      "Can thiệp nhà nước có thể vừa ổn định kinh tế vừa làm tăng liên kết với tập đoàn lớn",
+      "Mọi lựa chọn đều không có hệ quả",
+      "Không cần phân tích ngân sách",
+      "Độc quyền nhà nước chỉ là doanh nghiệp nhà nước"
+    ],
+    "answer": 0,
+    "explanation": "Mô phỏng giúp thấy tính hai mặt: ổn định, việc làm, ngân sách, cạnh tranh và ảnh hưởng của tập đoàn lớn."
+  }
+]

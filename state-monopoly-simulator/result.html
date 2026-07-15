@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kết quả | Budget Arena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="assets/js/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">BA</span><span><strong>Budget Arena</strong><small>Quyền lực phía sau thị trường</small></span></a>
+    <nav class="nav">
+      <a href="index.html">Giới thiệu</a>
+      <a href="game.html">Game</a>
+      <a class="active" href="result.html">Kết quả</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="references.html">Nguồn</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="result-grid">
+      <div class="panel">
+        <p class="eyebrow">Tổng kết game</p>
+        <h1>Xu hướng lựa chọn của bạn</h1>
+        <div class="result-code" id="resultCode">BA-00-00-00-00</div>
+        <div class="report-meta" id="reportMeta"></div>
+        <p class="lead" id="resultSummary"></p>
+        <div class="profile-card" id="profileCard"></div>
+        <div class="learning-check" id="learningCheck"></div>
+        <div class="decision-log" id="decisionLog"></div>
+        <div class="actions">
+          <a class="btn primary" href="game.html">Chơi lại Budget Arena</a>
+          <a class="btn" href="quiz.html">Làm quiz củng cố</a>
+          <a class="btn" href="../on-tap-chuong-4/index.html" target="_blank" rel="noopener noreferrer">Kho câu hỏi ôn tập Chương 4</a>
+          <button class="btn" id="printReport" type="button">In báo cáo</button>
+        </div>
+      </div>
+      <div class="panel chart-panel">
+        <h2>Biểu đồ chỉ số</h2>
+        <canvas id="resultChart" aria-label="Biểu đồ kết quả Budget Arena"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/scenarios.js"></script>
+  <script src="js/chart.js"></script>
+</body>
+</html>

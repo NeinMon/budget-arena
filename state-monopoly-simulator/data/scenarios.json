@@ -1,0 +1,227 @@
+[
+  {
+    "title": "Ngân hàng lớn có nguy cơ phá sản",
+    "description": "Một ngân hàng lớn gặp khủng hoảng thanh khoản. Nếu sụp đổ, tín dụng, việc làm và chuỗi thanh toán có thể bị tác động mạnh.",
+    "theory": "Minh họa việc nhà nước có thể dùng nguồn lực công để ổn định một tổ chức tài chính lớn, nhưng cần điều kiện kiểm soát để tránh làm tăng vị thế chi phối.",
+    "choices": [
+      {
+        "text": "Cấp gói cứu trợ trực tiếp",
+        "effects": {
+          "marketConcentration": 10,
+          "corporatePower": 15,
+          "stateBudget": -20,
+          "consumerWelfare": -4,
+          "smallBusiness": -8,
+          "employment": 10
+        },
+        "explanation": "Cứu trợ có thể duy trì việc làm trong ngắn hạn nhưng làm tăng sự phụ thuộc và liên kết giữa nhà nước với tập đoàn lớn."
+      },
+      {
+        "text": "Hỗ trợ có điều kiện và tăng giám sát",
+        "effects": {
+          "marketConcentration": 3,
+          "corporatePower": 5,
+          "stateBudget": -10,
+          "consumerWelfare": 3,
+          "smallBusiness": 2,
+          "employment": 8
+        },
+        "explanation": "Hỗ trợ có điều kiện giúp hạn chế việc tập đoàn sử dụng nguồn lực công mà không chịu trách nhiệm."
+      },
+      {
+        "text": "Không sử dụng ngân sách để cứu trợ",
+        "effects": {
+          "marketConcentration": -4,
+          "corporatePower": -5,
+          "stateBudget": 5,
+          "consumerWelfare": -6,
+          "smallBusiness": 5,
+          "employment": -15
+        },
+        "explanation": "Ngân sách được bảo toàn nhưng thị trường lao động có thể chịu tác động trong ngắn hạn."
+      }
+    ],
+    "image": "assets/images/round-1-bank.webp",
+    "alt": "Kh?ng ho?ng ng?n h?ng trong khu t?i ch?nh th?nh ph?"
+  },
+  {
+    "title": "Tập đoàn công nghệ kiểm soát dữ liệu",
+    "description": "Một tập đoàn công nghệ nắm giữ dữ liệu và hạ tầng số quan trọng. Nhà nước cần dùng dịch vụ của họ nhưng phải tránh phụ thuộc quá mức.",
+    "theory": "Minh họa quyền lực kinh tế hiện đại không chỉ nằm ở vốn, mà còn ở dữ liệu, hạ tầng số và khả năng tác động đến quá trình xây dựng chính sách.",
+    "choices": [
+      {
+        "text": "Ký hợp đồng trọn gói với tập đoàn lớn",
+        "effects": {
+          "marketConcentration": 12,
+          "corporatePower": 12,
+          "stateBudget": -12,
+          "consumerWelfare": 4,
+          "smallBusiness": -12,
+          "employment": 5
+        },
+        "explanation": "Hợp đồng công quy mô lớn có thể nâng hiệu quả triển khai nhưng làm tăng lợi thế của tập đoàn lớn."
+      },
+      {
+        "text": "Chia gói thầu cho nhiều doanh nghiệp",
+        "effects": {
+          "marketConcentration": -8,
+          "corporatePower": -4,
+          "stateBudget": -10,
+          "consumerWelfare": 6,
+          "smallBusiness": 12,
+          "employment": 7
+        },
+        "explanation": "Chia gói thầu hỗ trợ cạnh tranh và tăng cơ hội cho doanh nghiệp nhỏ."
+      },
+      {
+        "text": "Đặt tiêu chuẩn minh bạch và đấu thầu mở",
+        "effects": {
+          "marketConcentration": -3,
+          "corporatePower": -2,
+          "stateBudget": -6,
+          "consumerWelfare": 8,
+          "smallBusiness": 6,
+          "employment": 4
+        },
+        "explanation": "Đấu thầu minh bạch giúp hạn chế đặc quyền, dù vẫn cần năng lực quản lý và giám sát."
+      }
+    ],
+    "image": "assets/images/round-2-technology.webp",
+    "alt": "T?p ?o?n c?ng ngh? ki?m so?t d? li?u v? h? t?ng s?"
+  },
+  {
+    "title": "Giá năng lượng tăng mạnh",
+    "description": "Giá năng lượng tăng nhanh, gây áp lực lên người tiêu dùng và doanh nghiệp. Nhà nước cần điều tiết mà không làm méo mó cạnh tranh quá mức.",
+    "theory": "Minh họa vai trò điều tiết giá và hỗ trợ lĩnh vực chiến lược, đồng thời đặt câu hỏi về lợi ích xã hội, ngân sách và cạnh tranh.",
+    "choices": [
+      {
+        "text": "Áp giá trần và kiểm tra hành vi thao túng",
+        "effects": {
+          "marketConcentration": -5,
+          "corporatePower": -8,
+          "stateBudget": -4,
+          "consumerWelfare": 12,
+          "smallBusiness": 4,
+          "employment": 0
+        },
+        "explanation": "Kiểm soát hành vi lạm dụng giúp bảo vệ người tiêu dùng và hạn chế ảnh hưởng quá mức của doanh nghiệp có vị trí chi phối."
+      },
+      {
+        "text": "Trợ giá cho người tiêu dùng",
+        "effects": {
+          "marketConcentration": 3,
+          "corporatePower": 4,
+          "stateBudget": -14,
+          "consumerWelfare": 10,
+          "smallBusiness": 0,
+          "employment": 2
+        },
+        "explanation": "Trợ giá giảm áp lực ngắn hạn nhưng không nhất thiết xử lý quyền lực thị trường của doanh nghiệp lớn."
+      },
+      {
+        "text": "Mở cửa nhập khẩu và hỗ trợ nhà cung cấp mới",
+        "effects": {
+          "marketConcentration": -10,
+          "corporatePower": -9,
+          "stateBudget": -6,
+          "consumerWelfare": 9,
+          "smallBusiness": 7,
+          "employment": 3
+        },
+        "explanation": "Tăng nguồn cung và đối thủ mới có thể làm giảm mức độ tập trung thị trường."
+      }
+    ],
+    "image": "assets/images/round-3-energy.webp",
+    "alt": "Kh?ng ho?ng gi? n?ng l??ng trong th?nh ph? ban ??m"
+  },
+  {
+    "title": "D? ?n h? t?ng quy m? l?n",
+    "description": "M?t d? ?n h? t?ng l?n c?n l?a ch?n c?ch tri?n khai: giao cho t?p ?o?n m?nh, chia g?i th?u, hay t?ng minh b?ch v? gi?m s?t.",
+    "theory": "Minh h?a h?p ??ng c?ng v? ??u t? h? t?ng c? th? t?o l?i ?ch x? h?i, nh?ng c?ng c? th? l?m t?ng s? ph? thu?c v?o nh? th?u l?n n?u thi?u c?nh tranh.",
+    "image": "assets/images/round-4-infrastructure.webp",
+    "alt": "D? ?n h? t?ng th?ng minh v? h?p ??ng c?ng quy m? l?n",
+    "choices": [
+      {
+        "text": "Giao h?p ??ng tr?n g?i cho t?p ?o?n l?n",
+        "effects": {
+          "marketConcentration": 10,
+          "corporatePower": 12,
+          "stateBudget": -12,
+          "consumerWelfare": 5,
+          "smallBusiness": -8,
+          "employment": 6
+        },
+        "explanation": "H?p ??ng tr?n g?i c? th? tri?n khai nhanh nh?ng l?m t?ng s? ph? thu?c v?o m?t nh? th?u l?n."
+      },
+      {
+        "text": "Chia g?i th?u v? y?u c?u minh b?ch",
+        "effects": {
+          "marketConcentration": -6,
+          "corporatePower": -4,
+          "stateBudget": -10,
+          "consumerWelfare": 7,
+          "smallBusiness": 9,
+          "employment": 5
+        },
+        "explanation": "Chia g?i th?u v? minh b?ch h?a gi?p m? r?ng c?nh tranh, d? c?n n?ng l?c qu?n l? ph?c t?p h?n."
+      },
+      {
+        "text": "T?ng gi?m s?t ??c l?p tr??c khi k? h?p ??ng",
+        "effects": {
+          "marketConcentration": -3,
+          "corporatePower": -3,
+          "stateBudget": -5,
+          "consumerWelfare": 4,
+          "smallBusiness": 4,
+          "employment": 2
+        },
+        "explanation": "Gi?m s?t ??c l?p gi?p h?n ch? l?i ?ch nh?m v? gi?m r?i ro ph? thu?c ch?nh s?ch."
+      }
+    ]
+  },
+  {
+    "title": "T?p ?o?n d?a ??ng nh? m?y",
+    "description": "M?t t?p ?o?n l?n d?a ??ng nh? m?y n?u kh?ng ???c ?u ??i. H?ng ngh?n vi?c l?m b? ??t l?n b?n ??m ph?n ch?nh s?ch.",
+    "theory": "Minh h?a kh? n?ng doanh nghi?p l?n d?ng vi?c l?m v? ??u t? ?? t?o s?c ?p ng??c l?i v?i ch?nh s?ch nh? n??c.",
+    "image": "assets/images/round-5-employment.webp",
+    "alt": "Nh? m?y tr??c nguy c? ??ng c?a v? kh?ng ho?ng vi?c l?m",
+    "choices": [
+      {
+        "text": "Ch?p thu?n ?u ??i l?n ?? gi? nh? m?y",
+        "effects": {
+          "marketConcentration": 7,
+          "corporatePower": 10,
+          "stateBudget": -16,
+          "consumerWelfare": 1,
+          "smallBusiness": -7,
+          "employment": 9
+        },
+        "explanation": "?u ??i l?n c? th? gi? vi?c l?m ng?n h?n nh?ng l?m t?ng quy?n th??ng l??ng c?a t?p ?o?n."
+      },
+      {
+        "text": "?u ??i c? ?i?u ki?n v? vi?c l?m v? chuy?n giao c?ng ngh?",
+        "effects": {
+          "marketConcentration": 2,
+          "corporatePower": 4,
+          "stateBudget": -8,
+          "consumerWelfare": 5,
+          "smallBusiness": 3,
+          "employment": 9
+        },
+        "explanation": "?i?u ki?n ?i k?m gi?p ngu?n l?c c?ng g?n v?i l?i ?ch x? h?i c? th? h?n."
+      },
+      {
+        "text": "?p d?ng ch?nh s?ch thu? b?nh ??ng",
+        "effects": {
+          "marketConcentration": -4,
+          "corporatePower": -4,
+          "stateBudget": 6,
+          "consumerWelfare": 3,
+          "smallBusiness": 6,
+          "employment": -2
+        },
+        "explanation": "Ch?nh s?ch b?nh ??ng gi?p b?o v? c?nh tranh nh?ng c? th? gi?m s?c h?p d?n v?i nh? ??u t? l?n."
+      }
+    ]
+  }
+]
