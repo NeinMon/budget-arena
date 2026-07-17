@@ -9,1214 +9,1307 @@ let timerId = null;
 const firebaseSettings = window.TRUTH_FIREBASE_SETTINGS || { enabled: false, config: {} };
 
 const QUESTION_BANK = [
-  [
-    "personnel",
-    "Theo giáo trình, yếu tố nào góp phần làm thay đổi quan hệ nhân sự trong bộ máy chính quyền nhà nước ở xã hội tư bản ngày nay?",
-    [
+  {
+    "id": 1,
+    "category": "personnel",
+    "question": "Theo giáo trình, yếu tố nào góp phần làm thay đổi quan hệ nhân sự trong bộ máy chính quyền nhà nước ở xã hội tư bản ngày nay?",
+    "options": [
       "Sự phát triển của trình độ dân trí và quy luật cạnh tranh",
       "Sự xóa bỏ hoàn toàn cạnh tranh",
       "Sự biến mất của các tổ chức độc quyền",
       "Sự thay thế hoàn toàn bằng kinh tế tự cấp tự túc"
     ],
-    0,
-    "Giáo trình nêu sự phát triển trình độ dân trí và quy luật cạnh tranh dẫn đến thay đổi quan hệ nhân sự trong bộ máy chính quyền nhà nước."
-  ],
-  [
-    "personnel",
-    "Thể chế nào trở thành phổ biến trong phân chia quyền lực nhà nước ở các nước tư bản phát triển theo giáo trình?",
-    [
+    "answer": 0,
+    "explanation": "Giáo trình nêu sự phát triển trình độ dân trí và quy luật cạnh tranh dẫn đến thay đổi quan hệ nhân sự trong bộ máy chính quyền nhà nước."
+  },
+  {
+    "id": 2,
+    "category": "personnel",
+    "question": "Thể chế nào trở thành phổ biến trong phân chia quyền lực nhà nước ở các nước tư bản phát triển theo giáo trình?",
+    "options": [
       "Thể chế một quyền lực tuyệt đối",
       "Thể chế đa nguyên",
       "Thể chế không có cơ quan lập pháp",
       "Thể chế xóa bỏ mọi đảng phái"
     ],
-    1,
-    "Biểu hiện mới là thể chế đa nguyên trong phân chia quyền lực nhà nước."
-  ],
-  [
-    "personnel",
-    "Cơ chế thỏa hiệp giữa các thế lực tư bản độc quyền nhằm mục đích trực tiếp nào?",
-    [
+    "answer": 1,
+    "explanation": "Biểu hiện mới là thể chế đa nguyên trong phân chia quyền lực nhà nước."
+  },
+  {
+    "id": 3,
+    "category": "personnel",
+    "question": "Cơ chế thỏa hiệp giữa các thế lực tư bản độc quyền nhằm mục đích trực tiếp nào?",
+    "options": [
       "Cho phép một thế lực độc tôn",
-      "Cùng tồn tại và cùng phân chia quyền lực",
       "Xóa bỏ bộ máy nhà nước",
+      "Cùng tồn tại và cùng phân chia quyền lực",
       "Thay thế cạnh tranh bằng kinh tế tự nhiên"
     ],
-    1,
-    "Theo giáo trình, cơ chế thỏa hiệp cho phép các thế lực cùng tồn tại, cùng phân chia quyền lực và không để một thế lực độc tôn."
-  ],
-  [
-    "personnel",
-    "Nhận định nào KHÔNG phù hợp với biểu hiện mới về quan hệ nhân sự?",
-    [
+    "answer": 2,
+    "explanation": "Theo giáo trình, cơ chế thỏa hiệp cho phép các thế lực cùng tồn tại, cùng phân chia quyền lực và không để một thế lực độc tôn."
+  },
+  {
+    "id": 4,
+    "category": "personnel",
+    "question": "Nhận định nào KHÔNG phù hợp với biểu hiện mới về quan hệ nhân sự?",
+    "options": [
       "Có cơ chế thỏa hiệp giữa các thế lực tư bản độc quyền",
-      "Một thế lực tư bản luôn được phép chuyên quyền tuyệt đối",
       "Quyền lực có thể được phân chia giữa các thế lực",
-      "Thể chế đa nguyên trở nên phổ biến"
+      "Thể chế đa nguyên trở nên phổ biến",
+      "Một thế lực tư bản luôn được phép chuyên quyền tuyệt đối"
     ],
-    1,
-    "Giáo trình nhấn mạnh cơ chế thỏa hiệp không cho phép bất kỳ một thế lực nào độc tôn, chuyên quyền."
-  ],
-  [
-    "personnel",
-    "Trong không ít trường hợp, trọng tâm quyền lực nhà nước thuộc về lực lượng nào?",
-    [
+    "answer": 3,
+    "explanation": "Giáo trình nhấn mạnh cơ chế thỏa hiệp không cho phép bất kỳ một thế lực nào độc tôn, chuyên quyền."
+  },
+  {
+    "id": 5,
+    "category": "personnel",
+    "question": "Trong không ít trường hợp, trọng tâm quyền lực nhà nước thuộc về lực lượng nào?",
+    "options": [
       "Một thế lực trung dung có vị thế cân bằng",
       "Mọi công dân trực tiếp điều hành hằng ngày",
       "Một doanh nghiệp nhỏ không có ảnh hưởng",
       "Một lực lượng quân sự duy nhất"
     ],
-    0,
-    "Giáo trình cho biết trọng tâm quyền lực có thể thuộc về một thế lực trung dung, giữ vị thế cân bằng giữa các thế lực đối địch."
-  ],
-  [
-    "personnel",
-    "Vị thế cân bằng của một thế lực trung dung có thể tạo ra các thể chế như thế nào?",
-    [
+    "answer": 0,
+    "explanation": "Giáo trình cho biết trọng tâm quyền lực có thể thuộc về một thế lực trung dung, giữ vị thế cân bằng giữa các thế lực đối địch."
+  },
+  {
+    "id": 6,
+    "category": "personnel",
+    "question": "Vị thế cân bằng của một thế lực trung dung có thể tạo ra các thể chế như thế nào?",
+    "options": [
       "Cực đoan hơn mọi thời kỳ trước",
       "Ôn hòa hơn và ít cực đoan hơn",
       "Không có tính kinh tế, chính trị hay xã hội",
       "Không chịu tác động của quyền lực"
     ],
-    1,
-    "Theo giáo trình, vị thế cân bằng này có thể tạo ra thể chế kinh tế, chính trị, xã hội ôn hòa hơn và ít cực đoan hơn."
-  ],
-  [
-    "personnel",
-    "Hai nhóm lợi ích lớn thỏa thuận cùng tham gia một liên minh cầm quyền để không bên nào chi phối toàn bộ. Tình huống này minh họa rõ nhất cho:",
-    [
-      "Cơ chế thỏa hiệp và phân chia quyền lực",
+    "answer": 1,
+    "explanation": "Theo giáo trình, vị thế cân bằng này có thể tạo ra thể chế kinh tế, chính trị, xã hội ôn hòa hơn và ít cực đoan hơn."
+  },
+  {
+    "id": 7,
+    "category": "personnel",
+    "question": "Hai nhóm lợi ích lớn thỏa thuận cùng tham gia một liên minh cầm quyền để không bên nào chi phối toàn bộ. Tình huống này minh họa rõ nhất cho:",
+    "options": [
       "Xóa bỏ hoàn toàn độc quyền",
       "Sở hữu công cộng tuyệt đối",
+      "Cơ chế thỏa hiệp và phân chia quyền lực",
       "Cạnh tranh hoàn hảo"
     ],
-    0,
-    "Đây là tình huống vận dụng ý về cơ chế thỏa hiệp giữa các thế lực tư bản độc quyền."
-  ],
-  [
-    "personnel",
-    "“Thể chế đa nguyên trong phân chia quyền lực” chủ yếu nói đến phương diện nào?",
-    [
-      "Cơ chế nhân sự và phân bổ quyền lực nhà nước",
+    "answer": 2,
+    "explanation": "Đây là tình huống vận dụng ý về cơ chế thỏa hiệp giữa các thế lực tư bản độc quyền."
+  },
+  {
+    "id": 8,
+    "category": "personnel",
+    "question": "“Thể chế đa nguyên trong phân chia quyền lực” chủ yếu nói đến phương diện nào?",
+    "options": [
       "Kỹ thuật sản xuất hàng hóa",
       "Cách tính lượng giá trị hàng hóa",
-      "Tốc độ lưu thông tiền tệ"
+      "Tốc độ lưu thông tiền tệ",
+      "Cơ chế nhân sự và phân bổ quyền lực nhà nước"
     ],
-    0,
-    "Nội dung này thuộc phần biểu hiện mới về cơ chế quan hệ nhân sự trong bộ máy chính quyền."
-  ],
-  [
-    "personnel",
-    "Theo giáo trình, cơ chế thỏa hiệp giữa các thế lực tư bản độc quyền được ghi nhận chủ yếu tại:",
-    [
+    "answer": 3,
+    "explanation": "Nội dung này thuộc phần biểu hiện mới về cơ chế quan hệ nhân sự trong bộ máy chính quyền."
+  },
+  {
+    "id": 9,
+    "category": "personnel",
+    "question": "Theo giáo trình, cơ chế thỏa hiệp giữa các thế lực tư bản độc quyền được ghi nhận chủ yếu tại:",
+    "options": [
       "Các nước tư bản phát triển nhất",
       "Các cộng đồng tự cấp tự túc",
       "Mọi xã hội tiền tư bản",
       "Các xí nghiệp nhỏ riêng lẻ"
     ],
-    0,
-    "Giáo trình mô tả cơ chế này trong các nước tư bản phát triển nhất."
-  ],
-  [
-    "personnel",
-    "Một đề xuất khẳng định “quyền lực nhà nước nhất thiết do một tập đoàn duy nhất nắm trọn và không có thỏa hiệp” mâu thuẫn trực tiếp với ý nào của giáo trình?",
-    [
-      "Thể chế đa nguyên và cơ chế thỏa hiệp",
+    "answer": 0,
+    "explanation": "Giáo trình mô tả cơ chế này trong các nước tư bản phát triển nhất."
+  },
+  {
+    "id": 10,
+    "category": "personnel",
+    "question": "Một đề xuất khẳng định “quyền lực nhà nước nhất thiết do một tập đoàn duy nhất nắm trọn và không có thỏa hiệp” mâu thuẫn trực tiếp với ý nào của giáo trình?",
+    "options": [
       "Vai trò của thuế",
+      "Thể chế đa nguyên và cơ chế thỏa hiệp",
       "Khái niệm ngân sách",
       "Quy luật giá trị"
     ],
-    0,
-    "Đề xuất này trái với mô tả về đa nguyên, thỏa hiệp và phân chia quyền lực."
-  ],
-  [
-    "state_ownership",
-    "Theo giáo trình, chi tiêu ngân sách nhà nước thuộc quyền chủ yếu của:",
-    [
+    "answer": 1,
+    "explanation": "Đề xuất này trái với mô tả về đa nguyên, thỏa hiệp và phân chia quyền lực."
+  },
+  {
+    "id": 11,
+    "category": "state_ownership",
+    "question": "Theo giáo trình, chi tiêu ngân sách nhà nước thuộc quyền chủ yếu của:",
+    "options": [
       "Giới hành pháp",
-      "Giới lập pháp",
       "Các cổ đông nhỏ",
+      "Giới lập pháp",
       "Công đoàn doanh nghiệp"
     ],
-    1,
-    "Giáo trình nêu chi tiêu ngân sách nhà nước là công việc thuộc quyền của giới lập pháp."
-  ],
-  [
-    "state_ownership",
-    "Giới hành pháp bị giới hạn hoặc quản lý chặt chẽ trong chi tiêu ngân sách bằng:",
-    [
-      "Luật ngân sách nhà nước",
+    "answer": 2,
+    "explanation": "Giáo trình nêu chi tiêu ngân sách nhà nước là công việc thuộc quyền của giới lập pháp."
+  },
+  {
+    "id": 12,
+    "category": "state_ownership",
+    "question": "Giới hành pháp bị giới hạn hoặc quản lý chặt chẽ trong chi tiêu ngân sách bằng:",
+    "options": [
       "Quy luật giá trị",
       "Tỷ suất lợi nhuận bình quân",
-      "Luật cung - cầu"
+      "Luật cung - cầu",
+      "Luật ngân sách nhà nước"
     ],
-    0,
-    "Giáo trình chỉ rõ giới hành pháp có thể bị quản lý chặt chẽ bằng luật ngân sách nhà nước."
-  ],
-  [
-    "state_ownership",
-    "Hai mục tiêu được ưu tiên trong biểu hiện mới về sở hữu nhà nước là:",
-    [
-      "Tăng lạm phát và tăng thất nghiệp",
+    "answer": 3,
+    "explanation": "Giáo trình chỉ rõ giới hành pháp có thể bị quản lý chặt chẽ bằng luật ngân sách nhà nước."
+  },
+  {
+    "id": 13,
+    "category": "state_ownership",
+    "question": "Hai mục tiêu được ưu tiên trong biểu hiện mới về sở hữu nhà nước là:",
+    "options": [
       "Chống lạm phát và chống thất nghiệp",
+      "Tăng lạm phát và tăng thất nghiệp",
       "Giảm toàn bộ chi tiêu công",
       "Xóa bỏ mọi dự trữ quốc gia"
     ],
-    1,
-    "Giáo trình nêu chống lạm phát và chống thất nghiệp được ưu tiên."
-  ],
-  [
-    "state_ownership",
-    "Dự trữ quốc gia được mô tả là nguồn vốn chỉ có thể sử dụng trong:",
-    [
+    "answer": 0,
+    "explanation": "Giáo trình nêu chống lạm phát và chống thất nghiệp được ưu tiên."
+  },
+  {
+    "id": 14,
+    "category": "state_ownership",
+    "question": "Dự trữ quốc gia được mô tả là nguồn vốn chỉ có thể sử dụng trong:",
+    "options": [
       "Mọi giao dịch thương mại thường ngày",
       "Tình huống đặc biệt",
       "Mọi hoạt động của doanh nghiệp tư nhân",
       "Các khoản đầu tư cá nhân"
     ],
-    1,
-    "Theo giáo trình, dự trữ quốc gia chỉ có thể được sử dụng trong tình huống đặc biệt."
-  ],
-  [
-    "state_ownership",
-    "Biểu hiện phổ biến về sở hữu nhà nước trong nền kinh tế tư bản hiện đại là:",
-    [
-      "Nhà nước nắm cổ phần trong ngân hàng và công ty lớn",
+    "answer": 1,
+    "explanation": "Theo giáo trình, dự trữ quốc gia chỉ có thể được sử dụng trong tình huống đặc biệt."
+  },
+  {
+    "id": 15,
+    "category": "state_ownership",
+    "question": "Biểu hiện phổ biến về sở hữu nhà nước trong nền kinh tế tư bản hiện đại là:",
+    "options": [
       "Nhà nước xóa bỏ mọi ngân hàng",
       "Mọi công ty đều là doanh nghiệp tư nhân nhỏ",
+      "Nhà nước nắm cổ phần trong ngân hàng và công ty lớn",
       "Không tồn tại đầu tư công"
     ],
-    0,
-    "Cổ phần của nhà nước trong các ngân hàng và công ty lớn trở thành phổ biến theo giáo trình."
-  ],
-  [
-    "state_ownership",
-    "Đầu tư nhà nước có vai trò tăng lên trong lĩnh vực nào sau đây?",
-    [
-      "Nghiên cứu khoa học cơ bản",
+    "answer": 2,
+    "explanation": "Cổ phần của nhà nước trong các ngân hàng và công ty lớn trở thành phổ biến theo giáo trình."
+  },
+  {
+    "id": 16,
+    "category": "state_ownership",
+    "question": "Đầu tư nhà nước có vai trò tăng lên trong lĩnh vực nào sau đây?",
+    "options": [
       "Chỉ các hoạt động có lợi nhuận tức thời",
       "Chỉ kinh doanh đầu cơ ngắn hạn",
-      "Chỉ quảng cáo thương hiệu cá nhân"
+      "Chỉ quảng cáo thương hiệu cá nhân",
+      "Nghiên cứu khoa học cơ bản"
     ],
-    0,
-    "Nhà nước tăng đầu tư để khắc phục chi phí tốn kém trong nghiên cứu khoa học cơ bản."
-  ],
-  [
-    "state_ownership",
-    "Ngoài nghiên cứu khoa học cơ bản, đầu tư nhà nước còn gia tăng trong:",
-    [
+    "answer": 3,
+    "explanation": "Nhà nước tăng đầu tư để khắc phục chi phí tốn kém trong nghiên cứu khoa học cơ bản."
+  },
+  {
+    "id": 17,
+    "category": "state_ownership",
+    "question": "Ngoài nghiên cứu khoa học cơ bản, đầu tư nhà nước còn gia tăng trong:",
+    "options": [
       "Kết cấu hạ tầng và các nhu cầu xã hội",
       "Chỉ hoạt động giải trí tư nhân",
       "Chỉ thị trường hàng xa xỉ",
       "Chỉ sản xuất thủ công gia đình"
     ],
-    0,
-    "Giáo trình nêu xây dựng kết cấu hạ tầng và giải quyết nhu cầu mang tính xã hội."
-  ],
-  [
-    "state_ownership",
-    "Trong mô tả của giáo trình, nhà nước thường sử dụng ngân sách để:",
-    [
-      "Tạo cơ sở vật chất và gánh chịu rủi ro lớn",
+    "answer": 0,
+    "explanation": "Giáo trình nêu xây dựng kết cấu hạ tầng và giải quyết nhu cầu mang tính xã hội."
+  },
+  {
+    "id": 18,
+    "category": "state_ownership",
+    "question": "Trong mô tả của giáo trình, nhà nước thường sử dụng ngân sách để:",
+    "options": [
       "Chỉ chia lợi nhuận cho cổ đông tư nhân",
+      "Tạo cơ sở vật chất và gánh chịu rủi ro lớn",
       "Xóa bỏ mọi doanh nghiệp lớn",
       "Không can thiệp vào hạ tầng"
     ],
-    0,
-    "Nhà nước dùng ngân sách tạo cơ sở vật chất và gánh chịu rủi ro lớn."
-  ],
-  [
-    "state_ownership",
-    "Theo giáo trình, khi nhà nước gánh chi phí và rủi ro lớn, các công ty tư nhân có xu hướng tập trung vào:",
-    [
-      "Lĩnh vực có lợi nhuận hấp dẫn",
+    "answer": 1,
+    "explanation": "Nhà nước dùng ngân sách tạo cơ sở vật chất và gánh chịu rủi ro lớn."
+  },
+  {
+    "id": 19,
+    "category": "state_ownership",
+    "question": "Theo giáo trình, khi nhà nước gánh chi phí và rủi ro lớn, các công ty tư nhân có xu hướng tập trung vào:",
+    "options": [
       "Các hoạt động không tạo lợi nhuận",
       "Việc phân phối dự trữ quốc gia",
+      "Lĩnh vực có lợi nhuận hấp dẫn",
       "Công việc lập pháp"
     ],
-    0,
-    "Giáo trình mô tả các công ty tư nhân tập trung vào lĩnh vực có lợi nhuận hấp dẫn."
-  ],
-  [
-    "state_ownership",
-    "Vì sao các tập đoàn độc quyền lớn thường thu lợi nhuận lớn trong các dự án dùng ngân sách nhà nước?",
-    [
-      "Nhờ lợi thế về tiềm lực khi tham gia đấu thầu",
+    "answer": 2,
+    "explanation": "Giáo trình mô tả các công ty tư nhân tập trung vào lĩnh vực có lợi nhuận hấp dẫn."
+  },
+  {
+    "id": 20,
+    "category": "state_ownership",
+    "question": "Vì sao các tập đoàn độc quyền lớn thường thu lợi nhuận lớn trong các dự án dùng ngân sách nhà nước?",
+    "options": [
       "Vì không cần năng lực kỹ thuật hay tài chính",
       "Vì không phải ký hợp đồng",
-      "Vì mọi doanh nghiệp nhỏ bị cấm tham gia"
+      "Vì mọi doanh nghiệp nhỏ bị cấm tham gia",
+      "Nhờ lợi thế về tiềm lực khi tham gia đấu thầu"
     ],
-    0,
-    "Giáo trình nhấn mạnh lợi thế vượt trội về tiềm lực trong quá trình đấu thầu."
-  ],
-  [
-    "state_ownership",
-    "Nhận định nào đúng về sở hữu nhà nước trong phần lý luận nền tảng của Chương 4?",
-    [
-      "Chỉ gồm trụ sở bộ máy hành chính",
+    "answer": 3,
+    "explanation": "Giáo trình nhấn mạnh lợi thế vượt trội về tiềm lực trong quá trình đấu thầu."
+  },
+  {
+    "id": 21,
+    "category": "state_ownership",
+    "question": "Nhận định nào đúng về sở hữu nhà nước trong phần lý luận nền tảng của Chương 4?",
+    "options": [
       "Có thể gồm doanh nghiệp nhà nước và cơ sở hạ tầng kinh tế - xã hội",
+      "Chỉ gồm trụ sở bộ máy hành chính",
       "Không liên quan đến bất kỳ doanh nghiệp nào",
       "Chỉ tồn tại dưới dạng tiền mặt"
     ],
-    1,
-    "Giáo trình nêu sở hữu nhà nước không chỉ là tài sản cho bộ máy nhà nước mà còn gồm doanh nghiệp và hạ tầng kinh tế - xã hội."
-  ],
-  [
-    "state_ownership",
-    "Hình thức nào sau đây có thể tạo lập sở hữu nhà nước?",
-    [
-      "Nhà nước mua cổ phần của doanh nghiệp tư nhân",
+    "answer": 0,
+    "explanation": "Giáo trình nêu sở hữu nhà nước không chỉ là tài sản cho bộ máy nhà nước mà còn gồm doanh nghiệp và hạ tầng kinh tế - xã hội."
+  },
+  {
+    "id": 22,
+    "category": "state_ownership",
+    "question": "Hình thức nào sau đây có thể tạo lập sở hữu nhà nước?",
+    "options": [
       "Chỉ phát hành phiếu giảm giá cho người tiêu dùng",
+      "Nhà nước mua cổ phần của doanh nghiệp tư nhân",
       "Chỉ giảm lãi suất ngân hàng",
       "Chỉ ký hợp đồng lao động"
     ],
-    0,
-    "Một hình thức là nhà nước mua cổ phần của doanh nghiệp tư nhân."
-  ],
-  [
-    "state_ownership",
-    "Một chức năng của sở hữu nhà nước theo giáo trình là:",
-    [
-      "Mở rộng địa bàn cho sự phát triển của độc quyền",
+    "answer": 1,
+    "explanation": "Một hình thức là nhà nước mua cổ phần của doanh nghiệp tư nhân."
+  },
+  {
+    "id": 23,
+    "category": "state_ownership",
+    "question": "Một chức năng của sở hữu nhà nước theo giáo trình là:",
+    "options": [
       "Xóa bỏ hoàn toàn mọi doanh nghiệp tư nhân",
       "Loại bỏ mọi hoạt động đầu tư",
+      "Mở rộng địa bàn cho sự phát triển của độc quyền",
       "Chuyển nền kinh tế về tự cấp tự túc"
     ],
-    0,
-    "Giáo trình nêu sở hữu nhà nước có thể mở rộng sản xuất tư bản chủ nghĩa và tạo địa bàn phát triển cho độc quyền."
-  ],
-  [
-    "state_ownership",
-    "Sở hữu nhà nước có thể tạo điều kiện cho các tổ chức độc quyền làm gì?",
-    [
-      "Di chuyển tư bản từ ngành ít lãi sang ngành hiệu quả hơn",
+    "answer": 2,
+    "explanation": "Giáo trình nêu sở hữu nhà nước có thể mở rộng sản xuất tư bản chủ nghĩa và tạo địa bàn phát triển cho độc quyền."
+  },
+  {
+    "id": 24,
+    "category": "state_ownership",
+    "question": "Sở hữu nhà nước có thể tạo điều kiện cho các tổ chức độc quyền làm gì?",
+    "options": [
       "Xóa bỏ hoàn toàn cạnh tranh quốc tế",
       "Không thay đổi lĩnh vực đầu tư",
-      "Chấm dứt lưu thông hàng hóa"
+      "Chấm dứt lưu thông hàng hóa",
+      "Di chuyển tư bản từ ngành ít lãi sang ngành hiệu quả hơn"
     ],
-    0,
-    "Một chức năng được nêu là tạo điều kiện thuận lợi cho sự di chuyển tư bản giữa các ngành."
-  ],
-  [
-    "state_ownership",
-    "Sở hữu nhà nước làm chỗ dựa cho hoạt động nào?",
-    [
+    "answer": 3,
+    "explanation": "Một chức năng được nêu là tạo điều kiện thuận lợi cho sự di chuyển tư bản giữa các ngành."
+  },
+  {
+    "id": 25,
+    "category": "state_ownership",
+    "question": "Sở hữu nhà nước làm chỗ dựa cho hoạt động nào?",
+    "options": [
       "Điều tiết kinh tế của nhà nước theo các chương trình nhất định",
       "Xóa bỏ toàn bộ luật ngân sách",
       "Loại bỏ cơ quan lập pháp",
       "Chuyển toàn bộ tài sản cho cá nhân"
     ],
-    0,
-    "Giáo trình xác định sở hữu nhà nước là chỗ dựa cho điều tiết kinh tế của nhà nước."
-  ],
-  [
-    "state_ownership",
-    "“Thị trường nhà nước” được hình thành, phát triển thể hiện qua hành vi nào?",
-    [
-      "Nhà nước bao mua sản phẩm qua hợp đồng với doanh nghiệp độc quyền",
+    "answer": 0,
+    "explanation": "Giáo trình xác định sở hữu nhà nước là chỗ dựa cho điều tiết kinh tế của nhà nước."
+  },
+  {
+    "id": 26,
+    "category": "state_ownership",
+    "question": "“Thị trường nhà nước” được hình thành, phát triển thể hiện qua hành vi nào?",
+    "options": [
       "Người tiêu dùng ngừng mua hàng hóa",
+      "Nhà nước bao mua sản phẩm qua hợp đồng với doanh nghiệp độc quyền",
       "Doanh nghiệp nhỏ tự sản xuất để dùng",
       "Nhà nước không ký bất kỳ hợp đồng nào"
     ],
-    0,
-    "Giáo trình mô tả thị trường nhà nước qua việc nhà nước bao mua sản phẩm bằng các hợp đồng."
-  ],
-  [
-    "state_ownership",
-    "Một chính phủ nắm 25% cổ phần của một ngân hàng lớn nhưng không sở hữu toàn bộ ngân hàng. Đây phù hợp nhất với biểu hiện nào?",
-    [
-      "Cổ phần nhà nước trong ngân hàng lớn",
+    "answer": 1,
+    "explanation": "Giáo trình mô tả thị trường nhà nước qua việc nhà nước bao mua sản phẩm bằng các hợp đồng."
+  },
+  {
+    "id": 27,
+    "category": "state_ownership",
+    "question": "Một chính phủ nắm 25% cổ phần của một ngân hàng lớn nhưng không sở hữu toàn bộ ngân hàng. Đây phù hợp nhất với biểu hiện nào?",
+    "options": [
       "Xóa bỏ sở hữu nhà nước",
       "Cạnh tranh hoàn hảo",
+      "Cổ phần nhà nước trong ngân hàng lớn",
       "Sản xuất tự cấp tự túc"
     ],
-    0,
-    "Giáo trình nêu việc nhà nước có cổ phần trong ngân hàng và công ty lớn là biểu hiện phổ biến."
-  ],
-  [
-    "state_ownership",
-    "Cơ quan lập pháp phê chuẩn một khoản chi lớn; cơ quan hành pháp chỉ được giải ngân trong giới hạn luật ngân sách. Tình huống minh họa:",
-    [
-      "Vai trò của giới lập pháp trong chi tiêu ngân sách",
+    "answer": 2,
+    "explanation": "Giáo trình nêu việc nhà nước có cổ phần trong ngân hàng và công ty lớn là biểu hiện phổ biến."
+  },
+  {
+    "id": 28,
+    "category": "state_ownership",
+    "question": "Cơ quan lập pháp phê chuẩn một khoản chi lớn; cơ quan hành pháp chỉ được giải ngân trong giới hạn luật ngân sách. Tình huống minh họa:",
+    "options": [
       "Độc quyền mua của người tiêu dùng",
       "Lao động trừu tượng",
-      "Quy luật lưu thông tiền tệ"
+      "Quy luật lưu thông tiền tệ",
+      "Vai trò của giới lập pháp trong chi tiêu ngân sách"
     ],
-    0,
-    "Tình huống bám sát nội dung chi tiêu ngân sách thuộc quyền giới lập pháp và hành pháp bị ràng buộc bởi luật ngân sách."
-  ],
-  [
-    "state_ownership",
-    "Nhà nước đầu tư dự án hạ tầng có vốn lớn và rủi ro cao, sau đó doanh nghiệp tư nhân khai thác dịch vụ có khả năng sinh lời. Tình huống này gần nhất với nhận định:",
-    [
+    "answer": 3,
+    "explanation": "Tình huống bám sát nội dung chi tiêu ngân sách thuộc quyền giới lập pháp và hành pháp bị ràng buộc bởi luật ngân sách."
+  },
+  {
+    "id": 29,
+    "category": "state_ownership",
+    "question": "Nhà nước đầu tư dự án hạ tầng có vốn lớn và rủi ro cao, sau đó doanh nghiệp tư nhân khai thác dịch vụ có khả năng sinh lời. Tình huống này gần nhất với nhận định:",
+    "options": [
       "Nhà nước tạo cơ sở vật chất và gánh rủi ro, tư nhân hướng vào lợi nhuận",
       "Nhà nước không có vai trò kinh tế",
       "Doanh nghiệp tư nhân luôn gánh mọi rủi ro xã hội",
       "Mọi đầu tư công đều là tiêu dùng cá nhân"
     ],
-    0,
-    "Đây là tình huống vận dụng trực tiếp lập luận trong giáo trình."
-  ],
-  [
-    "state_ownership",
-    "Khi một tập đoàn có năng lực tài chính và kỹ thuật vượt trội thường trúng các gói thầu công lớn, nội dung nào được minh họa?",
-    [
-      "Lợi thế tiềm lực của tập đoàn lớn trong đấu thầu dự án công",
+    "answer": 0,
+    "explanation": "Đây là tình huống vận dụng trực tiếp lập luận trong giáo trình."
+  },
+  {
+    "id": 30,
+    "category": "state_ownership",
+    "question": "Khi một tập đoàn có năng lực tài chính và kỹ thuật vượt trội thường trúng các gói thầu công lớn, nội dung nào được minh họa?",
+    "options": [
       "Quy luật giá trị không còn tồn tại",
+      "Lợi thế tiềm lực của tập đoàn lớn trong đấu thầu dự án công",
       "Sản xuất hàng hóa bị xóa bỏ",
       "Dự trữ quốc gia được dùng hằng ngày"
     ],
-    0,
-    "Giáo trình liên hệ lợi thế tiềm lực với khả năng thu lợi nhuận lớn từ các đơn đặt hàng của nhà nước."
-  ],
-  [
-    "regulation",
-    "Hệ thống điều tiết của nhà nước tư sản bao gồm chủ yếu:",
-    [
-      "Bộ máy quản lý gắn với hệ thống chính sách và công cụ",
+    "answer": 1,
+    "explanation": "Giáo trình liên hệ lợi thế tiềm lực với khả năng thu lợi nhuận lớn từ các đơn đặt hàng của nhà nước."
+  },
+  {
+    "id": 31,
+    "category": "regulation",
+    "question": "Hệ thống điều tiết của nhà nước tư sản bao gồm chủ yếu:",
+    "options": [
       "Chỉ các doanh nghiệp nhỏ",
       "Chỉ thị trường tự do không có quy tắc",
+      "Bộ máy quản lý gắn với hệ thống chính sách và công cụ",
       "Chỉ hoạt động sản xuất nông nghiệp"
     ],
-    0,
-    "Giáo trình mô tả một tổng thể thiết chế, thể chế, bộ máy quản lý, chính sách và công cụ."
-  ],
-  [
-    "regulation",
-    "Phạm vi mà hệ thống điều tiết nhà nước có thể tác động theo giáo trình là:",
-    [
-      "Toàn bộ nền kinh tế quốc dân và quá trình tái sản xuất xã hội",
+    "answer": 2,
+    "explanation": "Giáo trình mô tả một tổng thể thiết chế, thể chế, bộ máy quản lý, chính sách và công cụ."
+  },
+  {
+    "id": 32,
+    "category": "regulation",
+    "question": "Phạm vi mà hệ thống điều tiết nhà nước có thể tác động theo giáo trình là:",
+    "options": [
       "Chỉ một cửa hàng bán lẻ",
       "Chỉ hoạt động tiêu dùng cá nhân",
-      "Chỉ một ngành thủ công"
+      "Chỉ một ngành thủ công",
+      "Toàn bộ nền kinh tế quốc dân và quá trình tái sản xuất xã hội"
     ],
-    0,
-    "Hệ thống điều tiết có khả năng tác động tới toàn bộ nền kinh tế quốc dân và toàn bộ quá trình tái sản xuất xã hội."
-  ],
-  [
-    "regulation",
-    "Hình thức điều tiết nào được giáo trình nêu?",
-    [
+    "answer": 3,
+    "explanation": "Hệ thống điều tiết có khả năng tác động tới toàn bộ nền kinh tế quốc dân và toàn bộ quá trình tái sản xuất xã hội."
+  },
+  {
+    "id": 33,
+    "category": "regulation",
+    "question": "Hình thức điều tiết nào được giáo trình nêu?",
+    "options": [
       "Hướng dẫn, kiểm soát và uốn nắn lệch lạc",
       "Chỉ cấm mọi giao dịch",
       "Chỉ để thị trường tự xử lý trong mọi tình huống",
       "Chỉ thay đổi tên doanh nghiệp"
     ],
-    0,
-    "Giáo trình nêu hướng dẫn, kiểm soát, uốn nắn những lệch lạc là các hình thức điều tiết."
-  ],
-  [
-    "regulation",
-    "Nhà nước có thể uốn nắn lệch lạc kinh tế bằng nhóm công cụ nào?",
-    [
-      "Công cụ kinh tế và công cụ hành chính - pháp lý",
+    "answer": 0,
+    "explanation": "Giáo trình nêu hướng dẫn, kiểm soát, uốn nắn những lệch lạc là các hình thức điều tiết."
+  },
+  {
+    "id": 34,
+    "category": "regulation",
+    "question": "Nhà nước có thể uốn nắn lệch lạc kinh tế bằng nhóm công cụ nào?",
+    "options": [
       "Chỉ công cụ quảng cáo",
+      "Công cụ kinh tế và công cụ hành chính - pháp lý",
       "Chỉ hoạt động từ thiện cá nhân",
       "Chỉ lao động thủ công"
     ],
-    0,
-    "Giáo trình nhấn mạnh kết hợp công cụ kinh tế với công cụ hành chính - pháp lý."
-  ],
-  [
-    "regulation",
-    "Biện pháp điều tiết của nhà nước có thể gồm:",
-    [
-      "Ưu đãi và trừng phạt",
+    "answer": 1,
+    "explanation": "Giáo trình nhấn mạnh kết hợp công cụ kinh tế với công cụ hành chính - pháp lý."
+  },
+  {
+    "id": 35,
+    "category": "regulation",
+    "question": "Biện pháp điều tiết của nhà nước có thể gồm:",
+    "options": [
       "Chỉ khuyến khích, không bao giờ xử lý vi phạm",
       "Chỉ trừng phạt, không có chính sách hỗ trợ",
+      "Ưu đãi và trừng phạt",
       "Không can thiệp bằng chính sách"
     ],
-    0,
-    "Giáo trình nói đến cả ưu đãi và trừng phạt."
-  ],
-  [
-    "regulation",
-    "Ví dụ nào thuộc giải pháp chiến lược dài hạn trong điều tiết kinh tế?",
-    [
-      "Lập chương trình, kế hoạch tổng thể phát triển khoa học - công nghệ",
+    "answer": 2,
+    "explanation": "Giáo trình nói đến cả ưu đãi và trừng phạt."
+  },
+  {
+    "id": 36,
+    "category": "regulation",
+    "question": "Ví dụ nào thuộc giải pháp chiến lược dài hạn trong điều tiết kinh tế?",
+    "options": [
       "Một quyết định mua sắm cá nhân trong ngày",
       "Thay đổi giá một món hàng ở cửa tiệm",
-      "Một giao dịch chuyển khoản cá nhân"
+      "Một giao dịch chuyển khoản cá nhân",
+      "Lập chương trình, kế hoạch tổng thể phát triển khoa học - công nghệ"
     ],
-    0,
-    "Giáo trình nêu lập chương trình và kế hoạch tổng thể phát triển kinh tế, khoa học, công nghệ, môi trường, bảo hiểm xã hội."
-  ],
-  [
-    "regulation",
-    "Công cụ chủ yếu nào KHÔNG được liệt kê trong giáo trình để nhà nước tư sản điều tiết kinh tế?",
-    [
+    "answer": 3,
+    "explanation": "Giáo trình nêu lập chương trình và kế hoạch tổng thể phát triển kinh tế, khoa học, công nghệ, môi trường, bảo hiểm xã hội."
+  },
+  {
+    "id": 37,
+    "category": "regulation",
+    "question": "Công cụ chủ yếu nào KHÔNG được liệt kê trong giáo trình để nhà nước tư sản điều tiết kinh tế?",
+    "options": [
+      "Một sở thích tiêu dùng cá nhân",
       "Ngân sách",
       "Thuế",
-      "Hệ thống tiền tệ và tín dụng",
-      "Một sở thích tiêu dùng cá nhân"
+      "Hệ thống tiền tệ và tín dụng"
     ],
-    3,
-    "Ngân sách, thuế, tiền tệ và tín dụng đều là công cụ điều tiết được giáo trình nêu."
-  ],
-  [
-    "regulation",
-    "Bên cạnh ngân sách và thuế, công cụ điều tiết còn bao gồm:",
-    [
-      "Doanh nghiệp nhà nước, kế hoạch hóa/chương trình hóa và công cụ hành chính - pháp lý",
+    "answer": 0,
+    "explanation": "Ngân sách, thuế, tiền tệ và tín dụng đều là công cụ điều tiết được giáo trình nêu."
+  },
+  {
+    "id": 38,
+    "category": "regulation",
+    "question": "Bên cạnh ngân sách và thuế, công cụ điều tiết còn bao gồm:",
+    "options": [
       "Chỉ tin đồn thị trường",
+      "Doanh nghiệp nhà nước, kế hoạch hóa/chương trình hóa và công cụ hành chính - pháp lý",
       "Chỉ phiếu bầu của người tiêu dùng",
       "Chỉ hoạt động xuất khẩu hàng hóa"
     ],
-    0,
-    "Đây là nhóm công cụ được liệt kê trong giáo trình."
-  ],
-  [
-    "regulation",
-    "Bộ máy điều tiết kinh tế gồm những nhánh cơ quan nào?",
-    [
-      "Lập pháp, hành pháp, tư pháp",
+    "answer": 1,
+    "explanation": "Đây là nhóm công cụ được liệt kê trong giáo trình."
+  },
+  {
+    "id": 39,
+    "category": "regulation",
+    "question": "Bộ máy điều tiết kinh tế gồm những nhánh cơ quan nào?",
+    "options": [
       "Quân đội, trường học, bệnh viện",
       "Người mua, người bán, người vận chuyển",
+      "Lập pháp, hành pháp, tư pháp",
       "Nông nghiệp, công nghiệp, dịch vụ"
     ],
-    0,
-    "Giáo trình nêu ba bộ phận lập pháp, hành pháp và tư pháp."
-  ],
-  [
-    "regulation",
-    "Về mặt nhân sự, bộ máy điều tiết kinh tế có sự tham gia của:",
-    [
-      "Đại biểu các tập đoàn tư bản độc quyền lớn và quan chức nhà nước",
+    "answer": 2,
+    "explanation": "Giáo trình nêu ba bộ phận lập pháp, hành pháp và tư pháp."
+  },
+  {
+    "id": 40,
+    "category": "regulation",
+    "question": "Về mặt nhân sự, bộ máy điều tiết kinh tế có sự tham gia của:",
+    "options": [
       "Chỉ người tiêu dùng cá nhân",
       "Chỉ hộ nông dân tự cấp",
-      "Chỉ nhà khoa học độc lập"
+      "Chỉ nhà khoa học độc lập",
+      "Đại biểu các tập đoàn tư bản độc quyền lớn và quan chức nhà nước"
     ],
-    0,
-    "Giáo trình ghi nhận sự tham gia của đại biểu tập đoàn tư bản độc quyền lớn và quan chức nhà nước."
-  ],
-  [
-    "regulation",
-    "Các tiểu ban “tư vấn” bên cạnh bộ máy điều tiết có thể thực hiện vai trò nào theo giáo trình?",
-    [
+    "answer": 3,
+    "explanation": "Giáo trình ghi nhận sự tham gia của đại biểu tập đoàn tư bản độc quyền lớn và quan chức nhà nước."
+  },
+  {
+    "id": 41,
+    "category": "regulation",
+    "question": "Các tiểu ban “tư vấn” bên cạnh bộ máy điều tiết có thể thực hiện vai trò nào theo giáo trình?",
+    "options": [
       "Tác động, “lái” đường lối kinh tế theo mục tiêu riêng của tổ chức độc quyền",
       "Xóa bỏ toàn bộ chính sách kinh tế",
       "Thay thế cơ quan tư pháp",
       "Tạo ra hàng hóa công cộng tự động"
     ],
-    0,
-    "Giáo trình dùng từ “tư vấn” và “lái” đường lối theo mục tiêu riêng của tổ chức độc quyền."
-  ],
-  [
-    "regulation",
-    "Cơ chế điều tiết kinh tế độc quyền nhà nước là sự dung hợp của bao nhiêu cơ chế?",
-    [
+    "answer": 0,
+    "explanation": "Giáo trình dùng từ “tư vấn” và “lái” đường lối theo mục tiêu riêng của tổ chức độc quyền."
+  },
+  {
+    "id": 42,
+    "category": "regulation",
+    "question": "Cơ chế điều tiết kinh tế độc quyền nhà nước là sự dung hợp của bao nhiêu cơ chế?",
+    "options": [
       "Hai cơ chế",
       "Ba cơ chế",
       "Bốn cơ chế",
       "Năm cơ chế"
     ],
-    1,
-    "Giáo trình xác định sự dung hợp ba cơ chế."
-  ],
-  [
-    "regulation",
-    "Ba cơ chế được dung hợp trong cơ chế điều tiết kinh tế độc quyền nhà nước là:",
-    [
-      "Thị trường, độc quyền tư nhân, điều tiết của nhà nước",
+    "answer": 1,
+    "explanation": "Giáo trình xác định sự dung hợp ba cơ chế."
+  },
+  {
+    "id": 43,
+    "category": "regulation",
+    "question": "Ba cơ chế được dung hợp trong cơ chế điều tiết kinh tế độc quyền nhà nước là:",
+    "options": [
       "Sản xuất, tiêu dùng, tiết kiệm",
       "Thuế, lãi suất, tỷ giá",
+      "Thị trường, độc quyền tư nhân, điều tiết của nhà nước",
       "Nông nghiệp, công nghiệp, dịch vụ"
     ],
-    0,
-    "Đây là ba cơ chế được giáo trình nêu trực tiếp."
-  ],
-  [
-    "regulation",
-    "Theo cách diễn đạt của giáo trình, cơ chế điều tiết này là cơ chế thị trường có sự điều tiết của nhà nước nhằm:",
-    [
-      "Phục vụ lợi ích của chủ nghĩa tư bản độc quyền",
+    "answer": 2,
+    "explanation": "Đây là ba cơ chế được giáo trình nêu trực tiếp."
+  },
+  {
+    "id": 44,
+    "category": "regulation",
+    "question": "Theo cách diễn đạt của giáo trình, cơ chế điều tiết này là cơ chế thị trường có sự điều tiết của nhà nước nhằm:",
+    "options": [
       "Xóa bỏ mọi lợi ích kinh tế",
       "Thay thế hoàn toàn thị trường bằng tự cấp",
-      "Bảo đảm không còn doanh nghiệp lớn"
+      "Bảo đảm không còn doanh nghiệp lớn",
+      "Phục vụ lợi ích của chủ nghĩa tư bản độc quyền"
     ],
-    0,
-    "Đây là kết luận được nêu trong phần cơ chế điều tiết kinh tế độc quyền nhà nước."
-  ],
-  [
-    "regulation",
-    "Vai trò hiện đại của nhà nước tư sản không chỉ là thuế và luật pháp mà còn gồm:",
-    [
+    "answer": 3,
+    "explanation": "Đây là kết luận được nêu trong phần cơ chế điều tiết kinh tế độc quyền nhà nước."
+  },
+  {
+    "id": 45,
+    "category": "regulation",
+    "question": "Vai trò hiện đại của nhà nước tư sản không chỉ là thuế và luật pháp mà còn gồm:",
+    "options": [
       "Tổ chức, quản lý khu vực kinh tế nhà nước và điều tiết toàn bộ tái sản xuất",
       "Chỉ điều hành một doanh nghiệp nhỏ",
       "Chỉ quản lý tiêu dùng cá nhân",
       "Không sử dụng đòn bẩy kinh tế"
     ],
-    0,
-    "Giáo trình nêu vai trò tổ chức, quản lý khu vực kinh tế nhà nước và điều tiết bằng đòn bẩy kinh tế."
-  ],
-  [
-    "regulation",
-    "Các khâu của quá trình tái sản xuất mà nhà nước có thể điều tiết gồm:",
-    [
-      "Sản xuất, phân phối, trao đổi, tiêu dùng",
+    "answer": 0,
+    "explanation": "Giáo trình nêu vai trò tổ chức, quản lý khu vực kinh tế nhà nước và điều tiết bằng đòn bẩy kinh tế."
+  },
+  {
+    "id": 46,
+    "category": "regulation",
+    "question": "Các khâu của quá trình tái sản xuất mà nhà nước có thể điều tiết gồm:",
+    "options": [
       "Chỉ sản xuất",
+      "Sản xuất, phân phối, trao đổi, tiêu dùng",
       "Chỉ trao đổi",
       "Chỉ tiêu dùng"
     ],
-    0,
-    "Giáo trình liệt kê đầy đủ bốn khâu này."
-  ],
-  [
-    "regulation",
-    "Một chính phủ đồng thời dùng thuế ưu đãi, quy định pháp lý, tín dụng ưu đãi và chương trình công nghệ dài hạn. Đây là ví dụ của:",
-    [
-      "Điều tiết kinh tế bằng nhiều công cụ kết hợp",
+    "answer": 1,
+    "explanation": "Giáo trình liệt kê đầy đủ bốn khâu này."
+  },
+  {
+    "id": 47,
+    "category": "regulation",
+    "question": "Một chính phủ đồng thời dùng thuế ưu đãi, quy định pháp lý, tín dụng ưu đãi và chương trình công nghệ dài hạn. Đây là ví dụ của:",
+    "options": [
       "Sản xuất tự cấp tự túc",
       "Xóa bỏ toàn bộ vai trò nhà nước",
+      "Điều tiết kinh tế bằng nhiều công cụ kết hợp",
       "Chỉ cạnh tranh giữa người tiêu dùng"
     ],
-    0,
-    "Tình huống phản ánh sự kết hợp công cụ kinh tế, hành chính - pháp lý và giải pháp dài hạn."
-  ],
-  [
-    "regulation",
-    "Đạo luật Thị trường Kỹ thuật số của EU (DMA) đặt các nghĩa vụ và điều cấm đối với “gatekeeper” là nền tảng số lớn. Ví dụ này minh họa rõ nhất cho:",
-    [
-      "Nhà nước/cơ quan công quyền dùng quy tắc để điều chỉnh sức mạnh thị trường",
+    "answer": 2,
+    "explanation": "Tình huống phản ánh sự kết hợp công cụ kinh tế, hành chính - pháp lý và giải pháp dài hạn."
+  },
+  {
+    "id": 48,
+    "category": "regulation",
+    "question": "Đạo luật Thị trường Kỹ thuật số của EU (DMA) đặt các nghĩa vụ và điều cấm đối với “gatekeeper” là nền tảng số lớn. Ví dụ này minh họa rõ nhất cho:",
+    "options": [
       "Thị trường số hoàn toàn không cần điều tiết",
       "Xóa bỏ công nghệ số",
-      "Sản xuất hàng hóa không còn cạnh tranh"
+      "Sản xuất hàng hóa không còn cạnh tranh",
+      "Nhà nước/cơ quan công quyền dùng quy tắc để điều chỉnh sức mạnh thị trường"
     ],
-    0,
-    "DMA là ví dụ thực tế về cơ quan công quyền đặt nghĩa vụ và điều cấm với các nền tảng số lớn để hỗ trợ thị trường công bằng, mở và có thể cạnh tranh."
-  ],
-  [
-    "regulation",
-    "Chương trình TARP của Hoa Kỳ được lập trong khủng hoảng tài chính 2008 nhằm ổn định hệ thống tài chính. Trong quiz, đây nên được hiểu thận trọng là:",
-    [
+    "answer": 3,
+    "explanation": "DMA là ví dụ thực tế về cơ quan công quyền đặt nghĩa vụ và điều cấm với các nền tảng số lớn để hỗ trợ thị trường công bằng, mở và có thể cạnh tranh."
+  },
+  {
+    "id": 49,
+    "category": "regulation",
+    "question": "Chương trình TARP của Hoa Kỳ được lập trong khủng hoảng tài chính 2008 nhằm ổn định hệ thống tài chính. Trong quiz, đây nên được hiểu thận trọng là:",
+    "options": [
       "Ví dụ về nhà nước can thiệp kinh tế khi khủng hoảng",
       "Bằng chứng mọi can thiệp nhà nước đều là độc quyền nhà nước theo nghĩa lý luận",
       "Ví dụ nhà nước không dùng ngân sách",
       "Ví dụ xóa bỏ hoàn toàn khu vực tư nhân"
     ],
-    0,
-    "TARP là ví dụ thực tế về can thiệp công để ổn định hệ thống tài chính; việc xếp vào “độc quyền nhà nước” phải tiếp tục phân tích bằng khung lý luận của giáo trình."
-  ],
-  [
-    "synthesis",
-    "Một trường hợp nhà nước đầu tư hạ tầng, nắm cổ phần tại doanh nghiệp lớn, ban hành thuế - tín dụng và ký hợp đồng mua sắm công. Cách nhận diện phù hợp nhất là:",
-    [
-      "Sự kết hợp các biểu hiện về sở hữu và điều tiết kinh tế của nhà nước",
+    "answer": 0,
+    "explanation": "TARP là ví dụ thực tế về can thiệp công để ổn định hệ thống tài chính; việc xếp vào “độc quyền nhà nước” phải tiếp tục phân tích bằng khung lý luận của giáo trình."
+  },
+  {
+    "id": 50,
+    "category": "synthesis",
+    "question": "Một trường hợp nhà nước đầu tư hạ tầng, nắm cổ phần tại doanh nghiệp lớn, ban hành thuế - tín dụng và ký hợp đồng mua sắm công. Cách nhận diện phù hợp nhất là:",
+    "options": [
       "Chỉ là quan hệ tiêu dùng cá nhân",
+      "Sự kết hợp các biểu hiện về sở hữu và điều tiết kinh tế của nhà nước",
       "Chỉ là lao động cụ thể",
       "Sự biến mất của mọi độc quyền"
     ],
-    0,
-    "Tình huống tích hợp hai nhóm biểu hiện mới: sở hữu nhà nước và điều tiết kinh tế."
-  ],
-  [
-    "positive_role",
-    "Vai trò tích cực đầu tiên của chủ nghĩa tư bản được giáo trình nhấn mạnh là:",
-    [
-      "Thúc đẩy lực lượng sản xuất phát triển nhanh chóng",
+    "answer": 1,
+    "explanation": "Tình huống tích hợp hai nhóm biểu hiện mới: sở hữu nhà nước và điều tiết kinh tế."
+  },
+  {
+    "id": 51,
+    "category": "positive_role",
+    "question": "Vai trò tích cực đầu tiên của chủ nghĩa tư bản được giáo trình nhấn mạnh là:",
+    "options": [
       "Xóa bỏ hoàn toàn mọi mâu thuẫn xã hội",
       "Chấm dứt tiến bộ khoa học - công nghệ",
+      "Thúc đẩy lực lượng sản xuất phát triển nhanh chóng",
       "Duy trì sản xuất thủ công là chủ yếu"
     ],
-    0,
-    "Giáo trình nêu chủ nghĩa tư bản làm lực lượng sản xuất phát triển mạnh mẽ."
-  ],
-  [
-    "positive_role",
-    "Chuỗi phát triển kỹ thuật nào được giáo trình dùng để mô tả sự phát triển lực lượng sản xuất?",
-    [
-      "Thủ công → cơ khí → tự động hóa → tin học hóa",
+    "answer": 2,
+    "explanation": "Giáo trình nêu chủ nghĩa tư bản làm lực lượng sản xuất phát triển mạnh mẽ."
+  },
+  {
+    "id": 52,
+    "category": "positive_role",
+    "question": "Chuỗi phát triển kỹ thuật nào được giáo trình dùng để mô tả sự phát triển lực lượng sản xuất?",
+    "options": [
       "Tin học hóa → thủ công → cơ khí",
       "Tự cấp → phong kiến → thủ công",
-      "Không có thay đổi kỹ thuật"
+      "Không có thay đổi kỹ thuật",
+      "Thủ công → cơ khí → tự động hóa → tin học hóa"
     ],
-    0,
-    "Giáo trình mô tả quá trình chuyển từ kỹ thuật lao động thủ công lên cơ khí, tự động hóa và tin học hóa."
-  ],
-  [
-    "positive_role",
-    "Sự phát triển kỹ thuật và công nghệ được giáo trình liên hệ với tác động nào?",
-    [
+    "answer": 3,
+    "explanation": "Giáo trình mô tả quá trình chuyển từ kỹ thuật lao động thủ công lên cơ khí, tự động hóa và tin học hóa."
+  },
+  {
+    "id": 53,
+    "category": "positive_role",
+    "question": "Sự phát triển kỹ thuật và công nghệ được giáo trình liên hệ với tác động nào?",
+    "options": [
       "Giải phóng sức lao động và nâng cao hiệu quả chinh phục tự nhiên",
       "Xóa bỏ toàn bộ lao động xã hội",
       "Giảm mọi năng suất lao động",
       "Làm sản xuất nhỏ hơn"
     ],
-    0,
-    "Giáo trình liên hệ phát triển kỹ thuật - công nghệ với giải phóng sức lao động và nâng cao hiệu quả hoạt động của con người."
-  ],
-  [
-    "positive_role",
-    "Theo giáo trình, sự xuất hiện của cuộc cách mạng công nghiệp lần thứ tư chuyển nền kinh tế nhân loại vào:",
-    [
-      "Thời đại kinh tế tri thức",
+    "answer": 0,
+    "explanation": "Giáo trình liên hệ phát triển kỹ thuật - công nghệ với giải phóng sức lao động và nâng cao hiệu quả hoạt động của con người."
+  },
+  {
+    "id": 54,
+    "category": "positive_role",
+    "question": "Theo giáo trình, sự xuất hiện của cuộc cách mạng công nghiệp lần thứ tư chuyển nền kinh tế nhân loại vào:",
+    "options": [
       "Thời đại tự cấp tự túc",
+      "Thời đại kinh tế tri thức",
       "Thời đại không dùng công nghệ",
       "Thời đại chỉ sản xuất thủ công"
     ],
-    0,
-    "Giáo trình gắn CMCN lần thứ tư với thời đại kinh tế tri thức."
-  ],
-  [
-    "positive_role",
-    "Vai trò tích cực thứ hai của chủ nghĩa tư bản là:",
-    [
-      "Chuyển nền sản xuất nhỏ thành nền sản xuất lớn hiện đại",
+    "answer": 1,
+    "explanation": "Giáo trình gắn CMCN lần thứ tư với thời đại kinh tế tri thức."
+  },
+  {
+    "id": 55,
+    "category": "positive_role",
+    "question": "Vai trò tích cực thứ hai của chủ nghĩa tư bản là:",
+    "options": [
       "Xóa bỏ mọi quan hệ hàng hóa",
       "Ngăn cản cải tiến kỹ thuật",
+      "Chuyển nền sản xuất nhỏ thành nền sản xuất lớn hiện đại",
       "Không tạo ra hàng hóa"
     ],
-    0,
-    "Đây là vai trò tích cực được giáo trình nêu trực tiếp."
-  ],
-  [
-    "positive_role",
-    "Sự ra đời của chủ nghĩa tư bản thúc đẩy kinh tế hàng hóa giản đơn chuyển lên:",
-    [
-      "Kinh tế hàng hóa tư bản chủ nghĩa phát triển",
+    "answer": 2,
+    "explanation": "Đây là vai trò tích cực được giáo trình nêu trực tiếp."
+  },
+  {
+    "id": 56,
+    "category": "positive_role",
+    "question": "Sự ra đời của chủ nghĩa tư bản thúc đẩy kinh tế hàng hóa giản đơn chuyển lên:",
+    "options": [
       "Kinh tế tự nhiên khép kín",
       "Kinh tế không có trao đổi",
-      "Kinh tế không có phân công lao động"
+      "Kinh tế không có phân công lao động",
+      "Kinh tế hàng hóa tư bản chủ nghĩa phát triển"
     ],
-    0,
-    "Giáo trình mô tả sự chuyển từ kinh tế hàng hóa giản đơn lên kinh tế hàng hóa tư bản chủ nghĩa phát triển."
-  ],
-  [
-    "positive_role",
-    "Nền sản xuất lớn hiện đại do chủ nghĩa tư bản thúc đẩy có đặc điểm nào?",
-    [
+    "answer": 3,
+    "explanation": "Giáo trình mô tả sự chuyển từ kinh tế hàng hóa giản đơn lên kinh tế hàng hóa tư bản chủ nghĩa phát triển."
+  },
+  {
+    "id": 57,
+    "category": "positive_role",
+    "question": "Nền sản xuất lớn hiện đại do chủ nghĩa tư bản thúc đẩy có đặc điểm nào?",
+    "options": [
       "Tập trung quy mô lớn, hiện đại và năng suất cao",
       "Quy mô nhỏ hơn, năng suất thấp hơn",
       "Không dùng kỹ thuật",
       "Chỉ phục vụ tự tiêu dùng"
     ],
-    0,
-    "Giáo trình mô tả nền sản xuất tập trung quy mô lớn, hiện đại, năng suất cao."
-  ],
-  [
-    "positive_role",
-    "Dưới tác động của quy luật kinh tế thị trường, chủ nghĩa tư bản đã kích thích:",
-    [
-      "Cải tiến kỹ thuật và tăng năng suất lao động",
+    "answer": 0,
+    "explanation": "Giáo trình mô tả nền sản xuất tập trung quy mô lớn, hiện đại, năng suất cao."
+  },
+  {
+    "id": 58,
+    "category": "positive_role",
+    "question": "Dưới tác động của quy luật kinh tế thị trường, chủ nghĩa tư bản đã kích thích:",
+    "options": [
       "Xóa bỏ mọi đổi mới",
+      "Cải tiến kỹ thuật và tăng năng suất lao động",
       "Giảm sản lượng hàng hóa xuống bằng 0",
       "Xóa bỏ phân công lao động"
     ],
-    0,
-    "Giáo trình nêu quy luật thị trường kích thích cải tiến kỹ thuật và tăng năng suất."
-  ],
-  [
-    "positive_role",
-    "Kết quả về hàng hóa của quá trình phát triển sản xuất lớn được giáo trình nêu là:",
-    [
-      "Tạo ra khối lượng sản phẩm hàng hóa khổng lồ, phong phú",
+    "answer": 1,
+    "explanation": "Giáo trình nêu quy luật thị trường kích thích cải tiến kỹ thuật và tăng năng suất."
+  },
+  {
+    "id": 59,
+    "category": "positive_role",
+    "question": "Kết quả về hàng hóa của quá trình phát triển sản xuất lớn được giáo trình nêu là:",
+    "options": [
       "Làm hàng hóa biến mất",
       "Chỉ còn một loại hàng hóa",
+      "Tạo ra khối lượng sản phẩm hàng hóa khổng lồ, phong phú",
       "Giảm hoàn toàn nhu cầu xã hội"
     ],
-    0,
-    "Giáo trình dùng cụm “khối lượng sản phẩm hàng hóa khổng lồ, phong phú”."
-  ],
-  [
-    "positive_role",
-    "Vai trò tích cực thứ ba được nêu trong giáo trình là:",
-    [
-      "Thực hiện xã hội hóa sản xuất",
+    "answer": 2,
+    "explanation": "Giáo trình dùng cụm “khối lượng sản phẩm hàng hóa khổng lồ, phong phú”."
+  },
+  {
+    "id": 60,
+    "category": "positive_role",
+    "question": "Vai trò tích cực thứ ba được nêu trong giáo trình là:",
+    "options": [
       "Xóa bỏ hoàn toàn trao đổi",
       "Giảm năng lực hợp tác",
-      "Duy trì cô lập sản xuất"
+      "Duy trì cô lập sản xuất",
+      "Thực hiện xã hội hóa sản xuất"
     ],
-    0,
-    "Chủ nghĩa tư bản thúc đẩy xã hội hóa sản xuất cả về chiều rộng và chiều sâu."
-  ],
-  [
-    "positive_role",
-    "Xã hội hóa sản xuất theo giáo trình diễn ra:",
-    [
+    "answer": 3,
+    "explanation": "Chủ nghĩa tư bản thúc đẩy xã hội hóa sản xuất cả về chiều rộng và chiều sâu."
+  },
+  {
+    "id": 61,
+    "category": "positive_role",
+    "question": "Xã hội hóa sản xuất theo giáo trình diễn ra:",
+    "options": [
       "Cả về chiều rộng và chiều sâu",
       "Chỉ về chiều rộng",
       "Chỉ về chiều sâu",
       "Không diễn ra"
     ],
-    0,
-    "Đây là cách giáo trình mô tả mức độ xã hội hóa sản xuất."
-  ],
-  [
-    "positive_role",
-    "Nhận định nào phản ánh đúng cách trình bày của giáo trình về vai trò lịch sử của chủ nghĩa tư bản?",
-    [
-      "Có đóng góp lớn cho phát triển xã hội nhưng cũng có giới hạn lịch sử",
+    "answer": 0,
+    "explanation": "Đây là cách giáo trình mô tả mức độ xã hội hóa sản xuất."
+  },
+  {
+    "id": 62,
+    "category": "positive_role",
+    "question": "Nhận định nào phản ánh đúng cách trình bày của giáo trình về vai trò lịch sử của chủ nghĩa tư bản?",
+    "options": [
       "Chỉ có tác động tiêu cực và không có đóng góp nào",
+      "Có đóng góp lớn cho phát triển xã hội nhưng cũng có giới hạn lịch sử",
       "Không liên quan đến phát triển lực lượng sản xuất",
       "Tồn tại vĩnh viễn không có giới hạn"
     ],
-    0,
-    "Giáo trình trình bày đồng thời mặt tích cực và các giới hạn lịch sử."
-  ],
-  [
-    "positive_role",
-    "Theo giáo trình, quan hệ sản xuất tư bản chủ nghĩa hiện nay vẫn có:",
-    [
-      "Sự phù hợp nhất định với trình độ phát triển cao của lực lượng sản xuất",
+    "answer": 1,
+    "explanation": "Giáo trình trình bày đồng thời mặt tích cực và các giới hạn lịch sử."
+  },
+  {
+    "id": 63,
+    "category": "positive_role",
+    "question": "Theo giáo trình, quan hệ sản xuất tư bản chủ nghĩa hiện nay vẫn có:",
+    "options": [
       "Sự phù hợp tuyệt đối và vĩnh viễn",
       "Không có bất kỳ sự phù hợp nào",
+      "Sự phù hợp nhất định với trình độ phát triển cao của lực lượng sản xuất",
       "Khả năng xóa bỏ mọi mâu thuẫn ngay lập tức"
     ],
-    0,
-    "Giáo trình nêu sự phù hợp nhất định, giúp chủ nghĩa tư bản thích nghi trong điều kiện lịch sử mới."
-  ],
-  [
-    "positive_role",
-    "Sự phù hợp nhất định của quan hệ sản xuất tư bản chủ nghĩa với lực lượng sản xuất có ý nghĩa gì theo giáo trình?",
-    [
-      "Giúp chủ nghĩa tư bản vẫn thích nghi và tiếp tục phát triển trong điều kiện mới",
+    "answer": 2,
+    "explanation": "Giáo trình nêu sự phù hợp nhất định, giúp chủ nghĩa tư bản thích nghi trong điều kiện lịch sử mới."
+  },
+  {
+    "id": 64,
+    "category": "positive_role",
+    "question": "Sự phù hợp nhất định của quan hệ sản xuất tư bản chủ nghĩa với lực lượng sản xuất có ý nghĩa gì theo giáo trình?",
+    "options": [
       "Chứng minh không còn giới hạn lịch sử",
       "Làm mọi độc quyền biến mất",
-      "Chấm dứt điều tiết của nhà nước"
+      "Chấm dứt điều tiết của nhà nước",
+      "Giúp chủ nghĩa tư bản vẫn thích nghi và tiếp tục phát triển trong điều kiện mới"
     ],
-    0,
-    "Giáo trình dùng ý này để giải thích vì sao chủ nghĩa tư bản vẫn tiếp tục phát triển."
-  ],
-  [
-    "positive_role",
-    "Một doanh nghiệp đưa robot và hệ thống tự động vào dây chuyền, làm năng suất tăng mạnh. Tình huống minh họa gần nhất cho:",
-    [
+    "answer": 3,
+    "explanation": "Giáo trình dùng ý này để giải thích vì sao chủ nghĩa tư bản vẫn tiếp tục phát triển."
+  },
+  {
+    "id": 65,
+    "category": "positive_role",
+    "question": "Một doanh nghiệp đưa robot và hệ thống tự động vào dây chuyền, làm năng suất tăng mạnh. Tình huống minh họa gần nhất cho:",
+    "options": [
       "Sự phát triển lực lượng sản xuất nhờ kỹ thuật - công nghệ",
       "Sự biến mất của sản xuất hàng hóa",
       "Sản xuất tự cấp tự túc",
       "Sự xóa bỏ hoàn toàn lao động xã hội"
     ],
-    0,
-    "Đây là ví dụ vận dụng nội dung về cơ khí hóa, tự động hóa và tăng năng suất."
-  ],
-  [
-    "positive_role",
-    "Một cơ sở sản xuất gia đình được mở rộng thành nhà máy hiện đại, sản xuất số lượng lớn và phân phối rộng. Đây minh họa trực tiếp cho:",
-    [
-      "Chuyển sản xuất nhỏ thành sản xuất lớn hiện đại",
+    "answer": 0,
+    "explanation": "Đây là ví dụ vận dụng nội dung về cơ khí hóa, tự động hóa và tăng năng suất."
+  },
+  {
+    "id": 66,
+    "category": "positive_role",
+    "question": "Một cơ sở sản xuất gia đình được mở rộng thành nhà máy hiện đại, sản xuất số lượng lớn và phân phối rộng. Đây minh họa trực tiếp cho:",
+    "options": [
       "Xóa bỏ sản xuất hàng hóa",
+      "Chuyển sản xuất nhỏ thành sản xuất lớn hiện đại",
       "Giảm năng suất lao động",
       "Xóa bỏ xã hội hóa sản xuất"
     ],
-    0,
-    "Tình huống bám sát vai trò chuyển nền sản xuất nhỏ thành sản xuất lớn hiện đại."
-  ],
-  [
-    "positive_role",
-    "Nhiều doanh nghiệp ở các địa phương khác nhau cùng tham gia các công đoạn nghiên cứu, sản xuất, vận chuyển và phân phối một sản phẩm. Hiện tượng này phù hợp nhất với:",
-    [
-      "Xu hướng xã hội hóa sản xuất",
+    "answer": 1,
+    "explanation": "Tình huống bám sát vai trò chuyển nền sản xuất nhỏ thành sản xuất lớn hiện đại."
+  },
+  {
+    "id": 67,
+    "category": "positive_role",
+    "question": "Nhiều doanh nghiệp ở các địa phương khác nhau cùng tham gia các công đoạn nghiên cứu, sản xuất, vận chuyển và phân phối một sản phẩm. Hiện tượng này phù hợp nhất với:",
+    "options": [
       "Sản xuất tự cấp tự túc",
       "Xóa bỏ phân công lao động",
+      "Xu hướng xã hội hóa sản xuất",
       "Tách rời hoàn toàn các chủ thể"
     ],
-    0,
-    "Đây là câu vận dụng để nhận diện sự liên kết và phụ thuộc lẫn nhau trong sản xuất xã hội hóa."
-  ],
-  [
-    "positive_role",
-    "Một doanh nghiệp cải tiến công nghệ để giảm chi phí và tăng năng suất trước sức ép cạnh tranh. Câu nào phù hợp nhất?",
-    [
-      "Cạnh tranh thị trường có thể kích thích cải tiến kỹ thuật",
+    "answer": 2,
+    "explanation": "Đây là câu vận dụng để nhận diện sự liên kết và phụ thuộc lẫn nhau trong sản xuất xã hội hóa."
+  },
+  {
+    "id": 68,
+    "category": "positive_role",
+    "question": "Một doanh nghiệp cải tiến công nghệ để giảm chi phí và tăng năng suất trước sức ép cạnh tranh. Câu nào phù hợp nhất?",
+    "options": [
       "Cạnh tranh luôn làm công nghệ ngừng phát triển",
       "Năng suất không liên quan kỹ thuật",
-      "Cải tiến kỹ thuật không làm thay đổi sản xuất"
+      "Cải tiến kỹ thuật không làm thay đổi sản xuất",
+      "Cạnh tranh thị trường có thể kích thích cải tiến kỹ thuật"
     ],
-    0,
-    "Câu vận dụng bám vào nhận định về tác động kích thích cải tiến kỹ thuật và tăng năng suất."
-  ],
-  [
-    "positive_role",
-    "Các công nghệ như AI, dữ liệu lớn, IoT và in 3D thường được nhắc đến khi nói về Cách mạng công nghiệp lần thứ tư. Trong bài học, ví dụ này giúp liên hệ với:",
-    [
+    "answer": 3,
+    "explanation": "Câu vận dụng bám vào nhận định về tác động kích thích cải tiến kỹ thuật và tăng năng suất."
+  },
+  {
+    "id": 69,
+    "category": "positive_role",
+    "question": "Các công nghệ như AI, dữ liệu lớn, IoT và in 3D thường được nhắc đến khi nói về Cách mạng công nghiệp lần thứ tư. Trong bài học, ví dụ này giúp liên hệ với:",
+    "options": [
       "Vai trò thúc đẩy lực lượng sản xuất và kinh tế tri thức",
       "Sự trở lại hoàn toàn của lao động thủ công",
       "Xóa bỏ khoa học - công nghệ",
       "Không có thay đổi về năng suất"
     ],
-    0,
-    "Đây là liên hệ thực tế với lập luận của giáo trình về CMCN lần thứ tư và kinh tế tri thức."
-  ],
-  [
-    "limits",
-    "Nguồn gốc sâu xa của các giới hạn lịch sử của chủ nghĩa tư bản là mâu thuẫn giữa:",
-    [
-      "Tính chất xã hội hóa cao của lực lượng sản xuất và chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất",
+    "answer": 0,
+    "explanation": "Đây là liên hệ thực tế với lập luận của giáo trình về CMCN lần thứ tư và kinh tế tri thức."
+  },
+  {
+    "id": 70,
+    "category": "limits",
+    "question": "Nguồn gốc sâu xa của các giới hạn lịch sử của chủ nghĩa tư bản là mâu thuẫn giữa:",
+    "options": [
       "Người mua và người bán trong một giao dịch đơn lẻ",
+      "Tính chất xã hội hóa cao của lực lượng sản xuất và chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất",
       "Nông nghiệp và công nghiệp",
       "Tiết kiệm và tiêu dùng cá nhân"
     ],
-    0,
-    "Đây là mâu thuẫn cơ bản được giáo trình xác định."
-  ],
-  [
-    "limits",
-    "Cơ sở kinh tế của chủ nghĩa tư bản được giáo trình xác định là:",
-    [
-      "Chế độ chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất",
+    "answer": 1,
+    "explanation": "Đây là mâu thuẫn cơ bản được giáo trình xác định."
+  },
+  {
+    "id": 71,
+    "category": "limits",
+    "question": "Cơ sở kinh tế của chủ nghĩa tư bản được giáo trình xác định là:",
+    "options": [
       "Sở hữu cộng đồng tuyệt đối về mọi tư liệu sản xuất",
       "Không tồn tại sở hữu tư liệu sản xuất",
+      "Chế độ chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất",
       "Chỉ sở hữu tiêu dùng cá nhân"
     ],
-    0,
-    "Giáo trình gắn các giới hạn lịch sử với chế độ chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất."
-  ],
-  [
-    "limits",
-    "Trong mô tả của giáo trình, giai cấp công nhân cơ bản không có tư liệu sản xuất nên phải:",
-    [
-      "Bán sức lao động cho nhà tư bản",
+    "answer": 2,
+    "explanation": "Giáo trình gắn các giới hạn lịch sử với chế độ chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất."
+  },
+  {
+    "id": 72,
+    "category": "limits",
+    "question": "Trong mô tả của giáo trình, giai cấp công nhân cơ bản không có tư liệu sản xuất nên phải:",
+    "options": [
       "Quyết định toàn bộ phân phối sản phẩm xã hội",
       "Nắm quyền sở hữu mọi tập đoàn",
-      "Không tham gia hoạt động kinh tế"
+      "Không tham gia hoạt động kinh tế",
+      "Bán sức lao động cho nhà tư bản"
     ],
-    0,
-    "Giáo trình nêu công nhân phải bán sức lao động và bị bóc lột giá trị thặng dư."
-  ],
-  [
-    "limits",
-    "Hệ quả đối với công nhân được giáo trình nêu sau việc bán sức lao động là:",
-    [
+    "answer": 3,
+    "explanation": "Giáo trình nêu công nhân phải bán sức lao động và bị bóc lột giá trị thặng dư."
+  },
+  {
+    "id": 73,
+    "category": "limits",
+    "question": "Hệ quả đối với công nhân được giáo trình nêu sau việc bán sức lao động là:",
+    "options": [
       "Bị bóc lột giá trị thặng dư",
       "Tự động sở hữu tư liệu sản xuất",
       "Tự động quyết định giá cả độc quyền",
       "Không còn quan hệ với sản xuất"
     ],
-    0,
-    "Đây là cách giáo trình mô tả quan hệ giữa công nhân và nhà tư bản."
-  ],
-  [
-    "limits",
-    "Trong chủ nghĩa tư bản hiện đại, tư liệu sản xuất tập trung chủ yếu trong tay:",
-    [
-      "Các nhà tư bản, đặc biệt là tập đoàn tư bản độc quyền",
+    "answer": 0,
+    "explanation": "Đây là cách giáo trình mô tả quan hệ giữa công nhân và nhà tư bản."
+  },
+  {
+    "id": 74,
+    "category": "limits",
+    "question": "Trong chủ nghĩa tư bản hiện đại, tư liệu sản xuất tập trung chủ yếu trong tay:",
+    "options": [
       "Mọi người lao động với tỷ lệ ngang nhau",
+      "Các nhà tư bản, đặc biệt là tập đoàn tư bản độc quyền",
       "Chỉ người tiêu dùng",
       "Các hộ tự cấp tự túc"
     ],
-    0,
-    "Giáo trình nhấn mạnh sự tập trung trong tay nhà tư bản và đặc biệt là tập đoàn tư bản độc quyền."
-  ],
-  [
-    "limits",
-    "Việc tư liệu sản xuất tập trung trong tay tập đoàn độc quyền dẫn đến khả năng nào?",
-    [
-      "Chi phối phân phối sản phẩm xã hội vì lợi ích thiểu số",
+    "answer": 1,
+    "explanation": "Giáo trình nhấn mạnh sự tập trung trong tay nhà tư bản và đặc biệt là tập đoàn tư bản độc quyền."
+  },
+  {
+    "id": 75,
+    "category": "limits",
+    "question": "Việc tư liệu sản xuất tập trung trong tay tập đoàn độc quyền dẫn đến khả năng nào?",
+    "options": [
       "Phân phối hoàn toàn đồng đều cho mọi người",
       "Xóa bỏ mọi lợi ích riêng",
+      "Chi phối phân phối sản phẩm xã hội vì lợi ích thiểu số",
       "Chấm dứt hoàn toàn cạnh tranh"
     ],
-    0,
-    "Giáo trình nhận định nhóm này chi phối phân phối sản phẩm xã hội vì lợi ích thiểu số giai cấp tư sản."
-  ],
-  [
-    "limits",
-    "Để đạt lợi nhuận độc quyền cao, tập đoàn độc quyền có thể:",
-    [
-      "Áp đặt giá bán cao và giá mua thấp",
+    "answer": 2,
+    "explanation": "Giáo trình nhận định nhóm này chi phối phân phối sản phẩm xã hội vì lợi ích thiểu số giai cấp tư sản."
+  },
+  {
+    "id": 76,
+    "category": "limits",
+    "question": "Để đạt lợi nhuận độc quyền cao, tập đoàn độc quyền có thể:",
+    "options": [
       "Luôn giảm giá bán xuống bằng 0",
       "Không quan tâm đến sản lượng",
-      "Chia toàn bộ lợi nhuận cho người tiêu dùng"
+      "Chia toàn bộ lợi nhuận cho người tiêu dùng",
+      "Áp đặt giá bán cao và giá mua thấp"
     ],
-    0,
-    "Giáo trình nêu việc áp đặt giá bán cao, giá mua thấp."
-  ],
-  [
-    "limits",
-    "Ngoài áp đặt giá bán cao và giá mua thấp, các tập đoàn độc quyền có thể:",
-    [
+    "answer": 3,
+    "explanation": "Giáo trình nêu việc áp đặt giá bán cao, giá mua thấp."
+  },
+  {
+    "id": 77,
+    "category": "limits",
+    "question": "Ngoài áp đặt giá bán cao và giá mua thấp, các tập đoàn độc quyền có thể:",
+    "options": [
       "Hạn chế sản lượng hàng hóa",
       "Tự động mở rộng sản lượng vô hạn",
       "Xóa bỏ toàn bộ thị trường",
       "Không cần quan tâm lợi nhuận"
     ],
-    0,
-    "Hạn chế sản lượng là một biểu hiện được giáo trình nêu."
-  ],
-  [
-    "limits",
-    "Việc áp đặt giá và hạn chế sản lượng có thể tạo ra:",
-    [
-      "Cung - cầu giả tạo và thiệt hại cho người tiêu dùng, xã hội",
+    "answer": 0,
+    "explanation": "Hạn chế sản lượng là một biểu hiện được giáo trình nêu."
+  },
+  {
+    "id": 78,
+    "category": "limits",
+    "question": "Việc áp đặt giá và hạn chế sản lượng có thể tạo ra:",
+    "options": [
       "Cạnh tranh hoàn hảo tự động",
+      "Cung - cầu giả tạo và thiệt hại cho người tiêu dùng, xã hội",
       "Phân phối hoàn toàn công bằng",
       "Xóa bỏ mọi chênh lệch thu nhập"
     ],
-    0,
-    "Giáo trình gắn hành vi độc quyền với cung - cầu giả tạo và thiệt hại xã hội."
-  ],
-  [
-    "limits",
-    "Mặc dù có nguồn lực lớn, độc quyền có thể kìm hãm tiến bộ kỹ thuật vì:",
-    [
-      "Nghiên cứu và sáng chế chỉ được làm khi vị thế độc quyền không bị lung lay",
+    "answer": 1,
+    "explanation": "Giáo trình gắn hành vi độc quyền với cung - cầu giả tạo và thiệt hại xã hội."
+  },
+  {
+    "id": 79,
+    "category": "limits",
+    "question": "Mặc dù có nguồn lực lớn, độc quyền có thể kìm hãm tiến bộ kỹ thuật vì:",
+    "options": [
       "Không hề có nguồn lực tài chính",
       "Kỹ thuật không liên quan sản xuất",
+      "Nghiên cứu và sáng chế chỉ được làm khi vị thế độc quyền không bị lung lay",
       "Mọi sáng chế đều bị cấm"
     ],
-    0,
-    "Giáo trình cho rằng lợi ích độc quyền có thể làm hoạt động sáng chế chỉ diễn ra khi vị thế độc quyền được bảo đảm."
-  ],
-  [
-    "limits",
-    "Xu thế trì trệ hoặc kìm hãm của nền kinh tế được giáo trình giải thích chủ yếu do:",
-    [
-      "Sự thống trị của độc quyền tạo nhân tố ngăn cản tiến bộ kỹ thuật và phát triển sản xuất",
+    "answer": 2,
+    "explanation": "Giáo trình cho rằng lợi ích độc quyền có thể làm hoạt động sáng chế chỉ diễn ra khi vị thế độc quyền được bảo đảm."
+  },
+  {
+    "id": 80,
+    "category": "limits",
+    "question": "Xu thế trì trệ hoặc kìm hãm của nền kinh tế được giáo trình giải thích chủ yếu do:",
+    "options": [
       "Mọi người lao động không muốn sản xuất",
       "Không còn bất kỳ công nghệ nào",
-      "Chỉ do thời tiết"
+      "Chỉ do thời tiết",
+      "Sự thống trị của độc quyền tạo nhân tố ngăn cản tiến bộ kỹ thuật và phát triển sản xuất"
     ],
-    0,
-    "Đây là nhận định trực tiếp của giáo trình về xu thế kìm hãm."
-  ],
-  [
-    "limits",
-    "Khi độc quyền nhà nước bị chi phối bởi nhóm lợi ích cục bộ hoặc độc quyền tư nhân chi phối quan hệ kinh tế - xã hội, hệ quả nào có thể xảy ra?",
-    [
+    "answer": 3,
+    "explanation": "Đây là nhận định trực tiếp của giáo trình về xu thế kìm hãm."
+  },
+  {
+    "id": 81,
+    "category": "limits",
+    "question": "Khi độc quyền nhà nước bị chi phối bởi nhóm lợi ích cục bộ hoặc độc quyền tư nhân chi phối quan hệ kinh tế - xã hội, hệ quả nào có thể xảy ra?",
+    "options": [
       "Tăng phân hóa giàu - nghèo",
       "Xóa bỏ hoàn toàn bất bình đẳng",
       "Tăng phân phối đồng đều tự động",
       "Chấm dứt mọi xung đột lợi ích"
     ],
-    0,
-    "Giáo trình nêu khả năng làm tăng sự phân hóa giàu - nghèo."
-  ],
-  [
-    "limits",
-    "Theo giáo trình, chủ nghĩa tư bản đã và đang tiếp tục tham gia gây ra:",
-    [
-      "Chiến tranh và xung đột ở nhiều nơi trên thế giới",
+    "answer": 0,
+    "explanation": "Giáo trình nêu khả năng làm tăng sự phân hóa giàu - nghèo."
+  },
+  {
+    "id": 82,
+    "category": "limits",
+    "question": "Theo giáo trình, chủ nghĩa tư bản đã và đang tiếp tục tham gia gây ra:",
+    "options": [
       "Sự biến mất hoàn toàn của xung đột",
+      "Chiến tranh và xung đột ở nhiều nơi trên thế giới",
       "Hòa bình tuyệt đối không điều kiện",
       "Chấm dứt cạnh tranh quốc tế"
     ],
-    0,
-    "Đây là một giới hạn lịch sử được giáo trình nêu."
-  ],
-  [
-    "limits",
-    "Giáo trình giải thích các cường quốc tư bản đã ra sức chiếm lĩnh thuộc địa và thị trường chủ yếu vì:",
-    [
-      "Nhu cầu tồn tại và phát triển",
+    "answer": 1,
+    "explanation": "Đây là một giới hạn lịch sử được giáo trình nêu."
+  },
+  {
+    "id": 83,
+    "category": "limits",
+    "question": "Giáo trình giải thích các cường quốc tư bản đã ra sức chiếm lĩnh thuộc địa và thị trường chủ yếu vì:",
+    "options": [
       "Muốn giảm mọi ảnh hưởng quốc tế",
       "Không quan tâm đến thị trường",
+      "Nhu cầu tồn tại và phát triển",
       "Muốn xóa bỏ phân chia lãnh thổ"
     ],
-    0,
-    "Giáo trình liên hệ việc chiếm lĩnh thuộc địa, thị trường với sự tồn tại và phát triển của các cường quốc tư bản."
-  ],
-  [
-    "limits",
-    "Tại sao sự phân chia lãnh thổ và thị trường thế giới có thể dẫn tới đấu tranh đòi phân chia lại?",
-    [
-      "Do phát triển không đều về kinh tế và chính trị giữa các nước tư bản",
+    "answer": 2,
+    "explanation": "Giáo trình liên hệ việc chiếm lĩnh thuộc địa, thị trường với sự tồn tại và phát triển của các cường quốc tư bản."
+  },
+  {
+    "id": 84,
+    "category": "limits",
+    "question": "Tại sao sự phân chia lãnh thổ và thị trường thế giới có thể dẫn tới đấu tranh đòi phân chia lại?",
+    "options": [
       "Do mọi nước phát triển hoàn toàn giống nhau",
       "Do không còn bất kỳ cạnh tranh nào",
-      "Do thị trường không tồn tại"
+      "Do thị trường không tồn tại",
+      "Do phát triển không đều về kinh tế và chính trị giữa các nước tư bản"
     ],
-    0,
-    "Giáo trình nêu sự phát triển không đều là một căn nguyên dẫn tới đấu tranh đòi phân chia lại."
-  ],
-  [
-    "limits",
-    "Theo giáo trình, các cuộc chạy đua vũ trang và chiến tranh lạnh có thể gây hậu quả nào?",
-    [
+    "answer": 3,
+    "explanation": "Giáo trình nêu sự phát triển không đều là một căn nguyên dẫn tới đấu tranh đòi phân chia lại."
+  },
+  {
+    "id": 85,
+    "category": "limits",
+    "question": "Theo giáo trình, các cuộc chạy đua vũ trang và chiến tranh lạnh có thể gây hậu quả nào?",
+    "options": [
       "Kéo tụt lùi kinh tế thế giới trong nhiều năm",
       "Tự động nâng năng suất toàn cầu",
       "Xóa bỏ cạnh tranh thị trường",
       "Tạo phân phối hoàn toàn bình đẳng"
     ],
-    0,
-    "Giáo trình cho rằng các hiện tượng này đã kéo tụt lùi kinh tế thế giới hàng chục năm."
-  ],
-  [
-    "limits",
-    "Việc nguy cơ chiến tranh thế giới bị đẩy lùi vào đầu thế kỷ XXI có đồng nghĩa với:",
-    [
+    "answer": 0,
+    "explanation": "Giáo trình cho rằng các hiện tượng này đã kéo tụt lùi kinh tế thế giới hàng chục năm."
+  },
+  {
+    "id": 86,
+    "category": "limits",
+    "question": "Việc nguy cơ chiến tranh thế giới bị đẩy lùi vào đầu thế kỷ XXI có đồng nghĩa với:",
+    "options": [
       "Chiến tranh bị loại trừ hoàn toàn",
       "Chiến tranh không bị loại trừ hoàn toàn",
       "Mọi xung đột kinh tế đã chấm dứt",
       "Không còn cạnh tranh giữa các cường quốc"
     ],
-    1,
-    "Giáo trình nhấn mạnh nguy cơ bị đẩy lùi không có nghĩa chiến tranh bị loại trừ hoàn toàn."
-  ],
-  [
-    "limits",
-    "Nhận định nào phản ánh đúng quan điểm của giáo trình về quan hệ sản xuất tư bản chủ nghĩa hiện đại?",
-    [
-      "Có thể điều chỉnh và thích nghi nhất định nhưng không xóa bỏ mâu thuẫn cơ bản",
+    "answer": 1,
+    "explanation": "Giáo trình nhấn mạnh nguy cơ bị đẩy lùi không có nghĩa chiến tranh bị loại trừ hoàn toàn."
+  },
+  {
+    "id": 87,
+    "category": "limits",
+    "question": "Nhận định nào phản ánh đúng quan điểm của giáo trình về quan hệ sản xuất tư bản chủ nghĩa hiện đại?",
+    "options": [
       "Đã xóa bỏ hoàn toàn mâu thuẫn cơ bản",
       "Không còn liên quan đến sở hữu tư liệu sản xuất",
+      "Có thể điều chỉnh và thích nghi nhất định nhưng không xóa bỏ mâu thuẫn cơ bản",
       "Tự động chuyển thành sản xuất tự cấp"
     ],
-    0,
-    "Giáo trình thừa nhận khả năng thích nghi nhất định, đồng thời nêu các giới hạn lịch sử không tự vượt qua được."
-  ],
-  [
-    "limits",
-    "Kết luận lý luận của giáo trình về tương lai lịch sử của chủ nghĩa tư bản là:",
-    [
-      "Không tồn tại vĩnh viễn; đến trình độ nhất định sẽ bị thay thế bởi hình thái tiến bộ hơn",
+    "answer": 2,
+    "explanation": "Giáo trình thừa nhận khả năng thích nghi nhất định, đồng thời nêu các giới hạn lịch sử không tự vượt qua được."
+  },
+  {
+    "id": 88,
+    "category": "limits",
+    "question": "Kết luận lý luận của giáo trình về tương lai lịch sử của chủ nghĩa tư bản là:",
+    "options": [
       "Tồn tại vĩnh viễn không thay đổi",
       "Không có bất kỳ mâu thuẫn nào",
-      "Tự động xóa bỏ mọi độc quyền"
+      "Tự động xóa bỏ mọi độc quyền",
+      "Không tồn tại vĩnh viễn; đến trình độ nhất định sẽ bị thay thế bởi hình thái tiến bộ hơn"
     ],
-    0,
-    "Đây là kết luận được nêu ở phần cuối Chương 4."
-  ],
-  [
-    "limits",
-    "Một nhóm doanh nghiệp thỏa thuận giữ giá bán cao, ép giá mua đầu vào thấp và giảm sản lượng. Tình huống này minh họa:",
-    [
+    "answer": 3,
+    "explanation": "Đây là kết luận được nêu ở phần cuối Chương 4."
+  },
+  {
+    "id": 89,
+    "category": "limits",
+    "question": "Một nhóm doanh nghiệp thỏa thuận giữ giá bán cao, ép giá mua đầu vào thấp và giảm sản lượng. Tình huống này minh họa:",
+    "options": [
       "Hành vi nhằm thu lợi nhuận độc quyền cao",
       "Cạnh tranh hoàn hảo",
       "Xóa bỏ khả năng thao túng giá",
       "Phân phối công bằng tự động"
     ],
-    0,
-    "Tình huống khớp với mô tả về giá cả độc quyền và hạn chế sản lượng."
-  ],
-  [
-    "limits",
-    "Một tập đoàn giữ bằng sáng chế nhưng trì hoãn triển khai công nghệ mới vì lo làm suy yếu sản phẩm đang độc quyền. Đây phù hợp nhất với:",
-    [
-      "Khả năng độc quyền kìm hãm tiến bộ kỹ thuật",
+    "answer": 0,
+    "explanation": "Tình huống khớp với mô tả về giá cả độc quyền và hạn chế sản lượng."
+  },
+  {
+    "id": 90,
+    "category": "limits",
+    "question": "Một tập đoàn giữ bằng sáng chế nhưng trì hoãn triển khai công nghệ mới vì lo làm suy yếu sản phẩm đang độc quyền. Đây phù hợp nhất với:",
+    "options": [
       "Vai trò giải phóng sức lao động",
+      "Khả năng độc quyền kìm hãm tiến bộ kỹ thuật",
       "Xóa bỏ lợi nhuận độc quyền",
       "Cạnh tranh hoàn hảo"
     ],
-    0,
-    "Đây là tình huống vận dụng ý độc quyền chỉ ưu tiên sáng chế khi vị thế của mình được bảo đảm."
-  ],
-  [
-    "real_world",
-    "Bộ Tư pháp Hoa Kỳ cho biết tòa án liên bang đã kết luận Google vi phạm luật chống độc quyền khi độc quyền hóa một số thị trường quảng cáo web mở. Bài học phù hợp nhất cho quiz là:",
-    [
-      "Sức mạnh thị trường số có thể trở thành đối tượng của kiểm soát cạnh tranh",
+    "answer": 1,
+    "explanation": "Đây là tình huống vận dụng ý độc quyền chỉ ưu tiên sáng chế khi vị thế của mình được bảo đảm."
+  },
+  {
+    "id": 91,
+    "category": "real_world",
+    "question": "Bộ Tư pháp Hoa Kỳ cho biết tòa án liên bang đã kết luận Google vi phạm luật chống độc quyền khi độc quyền hóa một số thị trường quảng cáo web mở. Bài học phù hợp nhất cho quiz là:",
+    "options": [
       "Mọi nền tảng số đều tự động là độc quyền nhà nước",
       "Không cần luật cạnh tranh trong thị trường số",
+      "Sức mạnh thị trường số có thể trở thành đối tượng của kiểm soát cạnh tranh",
       "Quảng cáo số không liên quan đến cạnh tranh"
     ],
-    0,
-    "Đây là ví dụ thực tế về việc cơ quan công quyền áp dụng luật cạnh tranh trước hành vi bị xem là độc quyền hóa."
-  ],
-  [
-    "real_world",
-    "EU DMA yêu cầu các nền tảng “gatekeeper” tuân thủ nghĩa vụ và điều cấm nhằm bảo đảm thị trường số mở, công bằng và có thể cạnh tranh. Điều này thể hiện:",
-    [
-      "Phản ứng quản lý trước quyền lực thị trường của nền tảng lớn",
+    "answer": 2,
+    "explanation": "Đây là ví dụ thực tế về việc cơ quan công quyền áp dụng luật cạnh tranh trước hành vi bị xem là độc quyền hóa."
+  },
+  {
+    "id": 92,
+    "category": "real_world",
+    "question": "EU DMA yêu cầu các nền tảng “gatekeeper” tuân thủ nghĩa vụ và điều cấm nhằm bảo đảm thị trường số mở, công bằng và có thể cạnh tranh. Điều này thể hiện:",
+    "options": [
       "Xóa bỏ mọi công nghệ số",
       "Chấm dứt mọi cạnh tranh giữa doanh nghiệp",
-      "Sản xuất hàng hóa không cần pháp luật"
+      "Sản xuất hàng hóa không cần pháp luật",
+      "Phản ứng quản lý trước quyền lực thị trường của nền tảng lớn"
     ],
-    0,
-    "Câu hỏi dùng DMA như một ví dụ thực tế về kiểm soát sức mạnh “gatekeeper”."
-  ],
-  [
-    "real_world",
-    "Trong vụ Google Android, Ủy ban châu Âu đã xử phạt Google vì các hạn chế bị xác định là trái quy tắc cạnh tranh. Tình huống này gần nhất với chủ đề:",
-    [
+    "answer": 3,
+    "explanation": "Câu hỏi dùng DMA như một ví dụ thực tế về kiểm soát sức mạnh “gatekeeper”."
+  },
+  {
+    "id": 93,
+    "category": "real_world",
+    "question": "Trong vụ Google Android, Ủy ban châu Âu đã xử phạt Google vì các hạn chế bị xác định là trái quy tắc cạnh tranh. Tình huống này gần nhất với chủ đề:",
+    "options": [
       "Kiểm soát hành vi lạm dụng vị thế thống lĩnh trên thị trường",
       "Xóa bỏ hoàn toàn mọi hệ điều hành",
       "Sản xuất tự cấp tự túc",
       "Chấm dứt vai trò của công nghệ"
     ],
-    0,
-    "Đây là ví dụ thực tế về thực thi cạnh tranh đối với hành vi bị cho là lạm dụng vị thế thống lĩnh."
-  ],
-  [
-    "real_world",
-    "OECD nêu rằng doanh nghiệp nhà nước niêm yết có thể có sở hữu hỗn hợp, trong đó nhà nước là một chủ sở hữu cùng với các nhóm khác. Ví dụ này giúp hiểu rằng:",
-    [
-      "Sở hữu nhà nước có thể tồn tại dưới dạng nắm cổ phần, không nhất thiết 100% vốn",
+    "answer": 0,
+    "explanation": "Đây là ví dụ thực tế về thực thi cạnh tranh đối với hành vi bị cho là lạm dụng vị thế thống lĩnh."
+  },
+  {
+    "id": 94,
+    "category": "real_world",
+    "question": "OECD nêu rằng doanh nghiệp nhà nước niêm yết có thể có sở hữu hỗn hợp, trong đó nhà nước là một chủ sở hữu cùng với các nhóm khác. Ví dụ này giúp hiểu rằng:",
+    "options": [
       "Sở hữu nhà nước chỉ tồn tại khi nhà nước nắm 100% vốn",
+      "Sở hữu nhà nước có thể tồn tại dưới dạng nắm cổ phần, không nhất thiết 100% vốn",
       "Doanh nghiệp không thể có nhiều chủ sở hữu",
       "Ngân sách không liên quan đến sở hữu"
     ],
-    0,
-    "Câu hỏi thực tế bổ trợ cho ý trong giáo trình về cổ phần nhà nước tại ngân hàng và công ty lớn."
-  ],
-  [
-    "real_world",
-    "TARP được Bộ Tài chính Hoa Kỳ thiết lập để ổn định hệ thống tài chính trong khủng hoảng 2008. Về mặt phân tích, đây là ví dụ phù hợp nhất của:",
-    [
-      "Vai trò can thiệp kinh tế của nhà nước trong khủng hoảng",
+    "answer": 1,
+    "explanation": "Câu hỏi thực tế bổ trợ cho ý trong giáo trình về cổ phần nhà nước tại ngân hàng và công ty lớn."
+  },
+  {
+    "id": 95,
+    "category": "real_world",
+    "question": "TARP được Bộ Tài chính Hoa Kỳ thiết lập để ổn định hệ thống tài chính trong khủng hoảng 2008. Về mặt phân tích, đây là ví dụ phù hợp nhất của:",
+    "options": [
       "Việc nhà nước không dùng bất kỳ công cụ nào",
       "Sự biến mất của khu vực tài chính",
+      "Vai trò can thiệp kinh tế của nhà nước trong khủng hoảng",
       "Cạnh tranh hoàn hảo tuyệt đối"
     ],
-    0,
-    "TARP là ví dụ lịch sử về chương trình can thiệp công để ổn định hệ thống tài chính."
-  ],
-  [
-    "critical",
-    "Khi dùng một vụ việc thực tế để trả lời bài học, cách làm nào đúng nhất?",
-    [
-      "Nêu rõ đó là ví dụ minh họa, sau đó đối chiếu với tiêu chí lý luận của giáo trình",
+    "answer": 2,
+    "explanation": "TARP là ví dụ lịch sử về chương trình can thiệp công để ổn định hệ thống tài chính."
+  },
+  {
+    "id": 96,
+    "category": "critical",
+    "question": "Khi dùng một vụ việc thực tế để trả lời bài học, cách làm nào đúng nhất?",
+    "options": [
       "Khẳng định mọi vụ việc đều hoàn toàn trùng khớp khái niệm lý luận",
       "Chỉ kể tin tức mà không giải thích khái niệm",
-      "Bỏ qua hoàn toàn nguồn chính thống"
+      "Bỏ qua hoàn toàn nguồn chính thống",
+      "Nêu rõ đó là ví dụ minh họa, sau đó đối chiếu với tiêu chí lý luận của giáo trình"
     ],
-    0,
-    "Câu hỏi giúp phân biệt giữa tình huống thực tế và kết luận lý luận."
-  ],
-  [
-    "synthesis",
-    "Có mâu thuẫn không khi giáo trình vừa nêu chủ nghĩa tư bản thúc đẩy khoa học - công nghệ, vừa nêu độc quyền có thể kìm hãm tiến bộ kỹ thuật?",
-    [
+    "answer": 3,
+    "explanation": "Câu hỏi giúp phân biệt giữa tình huống thực tế và kết luận lý luận."
+  },
+  {
+    "id": 97,
+    "category": "synthesis",
+    "question": "Có mâu thuẫn không khi giáo trình vừa nêu chủ nghĩa tư bản thúc đẩy khoa học - công nghệ, vừa nêu độc quyền có thể kìm hãm tiến bộ kỹ thuật?",
+    "options": [
       "Không; hai nhận định nói về các khuynh hướng và điều kiện khác nhau",
       "Có; một trong hai luôn sai",
       "Không liên quan đến nhau",
       "Chỉ vì công nghệ không tác động kinh tế"
     ],
-    0,
-    "Vai trò thúc đẩy phát triển thuộc mặt tích cực; sự kìm hãm là giới hạn có thể xuất hiện do lợi ích độc quyền."
-  ],
-  [
-    "synthesis",
-    "Nhà nước đầu tư nghiên cứu nền tảng rủi ro cao, sau đó doanh nghiệp tư nhân khai thác ứng dụng sinh lời. Tình huống này dùng để thảo luận tốt nhất về:",
-    [
-      "Mối quan hệ giữa đầu tư công, sở hữu/điều tiết nhà nước và lợi ích doanh nghiệp",
+    "answer": 0,
+    "explanation": "Vai trò thúc đẩy phát triển thuộc mặt tích cực; sự kìm hãm là giới hạn có thể xuất hiện do lợi ích độc quyền."
+  },
+  {
+    "id": 98,
+    "category": "synthesis",
+    "question": "Nhà nước đầu tư nghiên cứu nền tảng rủi ro cao, sau đó doanh nghiệp tư nhân khai thác ứng dụng sinh lời. Tình huống này dùng để thảo luận tốt nhất về:",
+    "options": [
       "Lao động cụ thể tạo ra giá trị sử dụng",
+      "Mối quan hệ giữa đầu tư công, sở hữu/điều tiết nhà nước và lợi ích doanh nghiệp",
       "Tiền tệ không có chức năng",
       "Sản xuất tự cấp không cần trao đổi"
     ],
-    0,
-    "Tình huống liên hệ biểu hiện mới về sở hữu nhà nước với lợi ích doanh nghiệp."
-  ],
-  [
-    "synthesis",
-    "Một nền tảng có khả năng quyết định điều kiện tiếp cận khách hàng cho nhiều doanh nghiệp nhỏ. Câu hỏi phân tích phù hợp nhất là:",
-    [
-      "Nền tảng có tạo ra quyền lực thị trường cần được đánh giá và kiểm soát hay không?",
+    "answer": 1,
+    "explanation": "Tình huống liên hệ biểu hiện mới về sở hữu nhà nước với lợi ích doanh nghiệp."
+  },
+  {
+    "id": 99,
+    "category": "synthesis",
+    "question": "Một nền tảng có khả năng quyết định điều kiện tiếp cận khách hàng cho nhiều doanh nghiệp nhỏ. Câu hỏi phân tích phù hợp nhất là:",
+    "options": [
       "Nền tảng có làm mọi cạnh tranh biến mất ngay lập tức hay không?",
       "Có nên bỏ qua mọi quy tắc cạnh tranh?",
+      "Nền tảng có tạo ra quyền lực thị trường cần được đánh giá và kiểm soát hay không?",
       "Có phải mọi công nghệ đều xấu?"
     ],
-    0,
-    "Đây là câu hỏi mở theo hướng nhận diện quyền lực thị trường, không kết luận sẵn mọi nền tảng là độc quyền."
-  ],
-  [
-    "synthesis",
-    "Kết luận nào khái quát đúng nhất về vai trò lịch sử của chủ nghĩa tư bản theo giáo trình?",
-    [
-      "Đã thúc đẩy lực lượng sản xuất, sản xuất lớn và xã hội hóa sản xuất; đồng thời có các giới hạn lịch sử bắt nguồn từ mâu thuẫn cơ bản",
+    "answer": 2,
+    "explanation": "Đây là câu hỏi mở theo hướng nhận diện quyền lực thị trường, không kết luận sẵn mọi nền tảng là độc quyền."
+  },
+  {
+    "id": 100,
+    "category": "synthesis",
+    "question": "Kết luận nào khái quát đúng nhất về vai trò lịch sử của chủ nghĩa tư bản theo giáo trình?",
+    "options": [
       "Chỉ tạo ra tác động tiêu cực và không có đóng góp phát triển",
       "Đã xóa bỏ hoàn toàn mọi mâu thuẫn xã hội",
-      "Tồn tại vĩnh viễn vì luôn tự khắc phục mọi giới hạn"
+      "Tồn tại vĩnh viễn vì luôn tự khắc phục mọi giới hạn",
+      "Đã thúc đẩy lực lượng sản xuất, sản xuất lớn và xã hội hóa sản xuất; đồng thời có các giới hạn lịch sử bắt nguồn từ mâu thuẫn cơ bản"
     ],
-    0,
-    "Đây là tổng hợp của hai phần: vai trò tích cực và giới hạn lịch sử của chủ nghĩa tư bản."
-  ]
-].map(([category, question, options, answer, explanation], index) => ({
-  id: index + 1,
-  category,
-  question,
-  options,
-  answer,
-  explanation
-}));
+    "answer": 3,
+    "explanation": "Đây là tổng hợp của hai phần: vai trò tích cực và giới hạn lịch sử của chủ nghĩa tư bản."
+  }
+];
 
 const CATEGORIES = {
   personnel: "Cơ chế quan hệ nhân sự",
